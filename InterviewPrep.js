@@ -67,3 +67,13 @@ function repeat(str, num){
 //repeat('Matt',3) // 'MattMattMatt'
 //repeat('Elie',2) // 'ElieElie'
 //repeat('Tim',0) // ''
+
+//8.
+function removeFromString(str, i, n){
+  return str.replace(str.substr(i, n), "")
+}
+// removeFromString('Elie',2,2) // 'El'
+// removeFromString('Elie',0,1) // 'lie'
+// removeFromString('Rithm School',0,6) // 'School'
+// removeFromString('Rithm School',2,4) // 'RiSchool'
+// removeFromString('Rithm School',6,400) // 'Rithm '
