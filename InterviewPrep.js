@@ -55,3 +55,15 @@ function stringLastIndexOf(str, char){
 }
 // stringLastIndexOf('awesome', 'e'); // 6
 // stringLastIndexOf('awesome', 'z'); // -1
+
+//7.
+function repeat(str, num){
+  newStr = ""
+  for (var i = 0; i < num; i++){
+    newStr += str;
+  }
+  return newStr;
+}
+//repeat('Matt',3) // 'MattMattMatt'
+//repeat('Elie',2) // 'ElieElie'
+//repeat('Tim',0) // ''
