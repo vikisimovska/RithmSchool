@@ -28,3 +28,13 @@ function charAt(str,num){
 }
 // charAt('awesome',2) // 'e'
 // charAt('awesome',12) // ''
+
+//4.
+function stringIncludes(str, char){
+  return str.indexOf(char) != -1;
+}
+
+stringIncludes('awesome', 'e'); // true
+stringIncludes('awesome', 'z'); // false
+
+//5.
