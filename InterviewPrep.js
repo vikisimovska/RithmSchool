@@ -48,3 +48,10 @@ function stringIndexOf(str, char){
 }
 // stringIndexOf('awesome','e') // 2
 // stringIndexOf('awesome','z') // -1
+
+//6.
+function stringLastIndexOf(str, char){
+  return str.lastIndexOf(char);
+}
+// stringLastIndexOf('awesome', 'e'); // 6
+// stringLastIndexOf('awesome', 'z'); // -1
