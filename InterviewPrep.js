@@ -34,7 +34,17 @@ function stringIncludes(str, char){
   return str.indexOf(char) != -1;
 }
 
-stringIncludes('awesome', 'e'); // true
-stringIncludes('awesome', 'z'); // false
+// stringIncludes('awesome', 'e'); // true
+// stringIncludes('awesome', 'z'); // false
 
 //5.
+function stringIndexOf(str, char){
+  for (var i = 0; i < str.length; i++){
+    if (str[i] == char){
+      return i;
+    }
+  }
+  return -1;
+}
+// stringIndexOf('awesome','e') // 2
+// stringIndexOf('awesome','z') // -1
