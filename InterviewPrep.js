@@ -72,8 +72,14 @@ function repeat(str, num){
 function removeFromString(str, i, n){
   return str.replace(str.substr(i, n), "")
 }
-// removeFromString('Elie',2,2) // 'El'
-// removeFromString('Elie',0,1) // 'lie'
-// removeFromString('Rithm School',0,6) // 'School'
-// removeFromString('Rithm School',2,4) // 'RiSchool'
-// removeFromString('Rithm School',6,400) // 'Rithm '
+//9.
+function includes(arr, num){
+  for (var i=0; i < arr.length; i++){
+    if (arr[i] == num)
+      return true;
+  }
+  return false;
+}
+//includes([1,2,3,4], 4) // true
+//includes([1,2,3,4], 14) // false
+//includes([], 14) // false
