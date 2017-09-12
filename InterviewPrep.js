@@ -10,7 +10,7 @@ function appendToString(str1, str2){
 // appendToString("", "test"); // "test"
 // appendToString("other test", ""); // "other test"
 
-//2.
+//2 . 
 function prependToString(str1, str2){
 return (str2 + str1)
 }
