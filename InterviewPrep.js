@@ -184,3 +184,33 @@ function shift(arr){
 // arr; // ["b","c"]
 
 //16.
+function reverse(arr){
+
+  for (var i = arr.length - 2; i >= 0; i--){
+    arr.push(arr[i]);
+  }
+  arr.splice(0, arr.length/2);
+  return arr;
+}
+
+// swap each value in the array starting from the beginning and going to the middle
+// function reverse(arr){
+//   var mid = Math.floor(arr.length/2);
+//   for(var i = 0; i < mid; i++){
+//     // make a temporary variable to store the value closer to the beginning
+//     var temp = arr[i];
+//     // replace the value closer to the beginning with the value closer to the end
+//     arr[i] = arr[arr.length - i - 1]
+//     // replace the value closer to the end with the temporary variable
+//     arr[arr.length - i - 1] = temp;
+//   }
+//   return arr;
+// }
+// reverse([5,4,3,2,1]) // [1,2,3,4,5]
+// reverse([]) // []
+//
+// var arr = [1,2,3]
+// reverse(arr) // [3,2,1]
+// arr // [3,2,1]
+
+//17.
