@@ -97,3 +97,15 @@ function indexOf(arr, num){
 //
 // var arr2 = [1,2,3,4,5]
 // indexOf(arr2, 2) // 1
+
+//10.
+function lastIndexOf(arr, num){
+  for (var i=arr.length-1; i >=0; i--){
+    if (arr[i] === num) return i
+  }
+  return -1
+}
+
+// lastIndexOf([1,2,3,4], 2) // 1
+// lastIndexOf([1,2,3,4,2], 2) // 4
+// lastIndexOf([1,2,3,4], 22) // -1
