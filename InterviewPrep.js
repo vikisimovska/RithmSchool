@@ -160,3 +160,27 @@ function unshift(arr, num){
 // unshift([4,5,6],10) // 4
 
 //15.
+function shift(arr){
+  first_ele = arr[0];
+  for(var i = 0; i < arr.length; i++){
+    arr[i] = arr[i+1];
+  }
+  console.log(arr);
+  arr.splice(arr.length-1, 1);
+  console.log(arr);
+
+  return first_ele;
+}
+// function shift(arr){
+//   var firstVal = arr[0];
+//   for (var i = 1; i < arr.length; i++) {
+//     arr[i - 1] = arr[i];
+//   }
+//   arr.length = arr.length-1;
+//   return firstVal;
+// }
+// var arr = ["a","b","c"];
+// shift(arr); // "a"
+// arr; // ["b","c"]
+
+//16.
