@@ -125,3 +125,12 @@ function push(arr, num){
 // push(secondArr, 20) // 5
 //
 // arr // [5,2,1,6,20]
+
+//13.
+function pop(arr){
+  l = arr[arr.length-1]
+  arr.splice(arr.length-1, 1);
+  return l;
+}
+
+//14.
