@@ -98,7 +98,7 @@ function indexOf(arr, num){
 // var arr2 = [1,2,3,4,5]
 // indexOf(arr2, 2) // 1
 
-//10.
+//11.
 function lastIndexOf(arr, num){
   for (var i=arr.length-1; i >=0; i--){
     if (arr[i] === num) return i
@@ -109,3 +109,19 @@ function lastIndexOf(arr, num){
 // lastIndexOf([1,2,3,4], 2) // 1
 // lastIndexOf([1,2,3,4,2], 2) // 4
 // lastIndexOf([1,2,3,4], 22) // -1
+
+//12.
+function push(arr, num){
+  arr[arr.length] = num;
+  return arr.length;
+}
+
+// var arr = [1,2,3]
+// push(arr, 10) // 4
+//
+// arr // [1,2,3,4]
+//
+// var secondArr = [5,2,1,6]
+// push(secondArr, 20) // 5
+//
+// arr // [5,2,1,6,20]
