@@ -83,3 +83,17 @@ function includes(arr, num){
 //includes([1,2,3,4], 4) // true
 //includes([1,2,3,4], 14) // false
 //includes([], 14) // false
+
+//10.
+function indexOf(arr, num){
+  for (var i=0; i < arr.length; i++){
+    if (arr[i] == num) return i
+  }
+  return -1
+}
+
+// var arr = [5,10,15,20]
+// indexOf(arr, 20) // 3
+//
+// var arr2 = [1,2,3,4,5]
+// indexOf(arr2, 2) // 1
