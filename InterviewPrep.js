@@ -134,3 +134,29 @@ function pop(arr){
 }
 
 //14.
+function unshift(arr, num){
+  temp_arr = [];
+  arr.forEach(function(element) {
+    temp_arr.push(element);
+});
+  arr[0] = num;
+  var size = arr.length;
+  for (var i = 0; i < size; i++){
+    arr[i+1] = temp_arr[i];
+  }
+ return arr.length;
+}
+// function unshift(arr, val){
+//   for(var i = arr.length; i >= 0; i--){
+//     arr[i] = arr[i-1]
+//   }
+//   arr[0] = val
+//   return arr.length
+// }
+// var arr = [1,2,3];
+// unshift(arr,0) // 4
+// arr // [0,1,2,3]
+//
+// unshift([4,5,6],10) // 4
+
+//15.
