@@ -245,3 +245,39 @@ function min(arr){
 // min([-1,6,3,2.2,-10,-4]) // -10
 
 //19.
+function slice(arr, arg1, arg2){
+  result = []
+  if (arguments.length === 3){
+    if (arg2 > arr.length) arg2 = arr.length;
+    count = 0;
+    for (var i=arg1; i<arg2; i++){
+      result[count] = arr[i];
+      count++;
+    }
+  }
+  else
+  {
+    count = 0;
+    for (i=arg1; i<arr.length; i++){
+       result[count] = arr[i];
+      count++;
+    }
+  }
+ return result;
+}
+// function slice(arr, start, end){
+//   var newArr = [];
+//   if(end === undefined || end > arr.length) {
+//     end = arr.length
+//   }
+//   for(var i = start; i < end; i++){
+//     newArr.push(arr[i])
+//   }
+//   return newArr;
+// }
+// slice([1,2,3,4,5], 0,2) // [1,2]
+// slice([1,2,3,4,5], 2,4) // [3,4]
+// slice([1,2,3,4,5], 2) // [3,4,5]
+// slice([1,2,3,4,5], 2,10) // [3,4,5)
+
+//20.
