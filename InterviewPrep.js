@@ -231,3 +231,17 @@ function max(arr){
 // max([5,1,4,7,1,2]) // 7
 // max([3, 4, 12, 1, 8]) // 12
 // max([-1,6,3,2.2,-10,-4]) // 6
+
+//18.
+function min(arr){
+  var lowest = Infinity
+  for(var i = 0; i<arr.length; i++){
+    if(arr[i] < lowest) lowest = arr[i]
+  }
+  return lowest
+}
+
+// min([5,1,4,7,1,2]) // 1
+// min([-1,6,3,2.2,-10,-4]) // -10
+
+//19.
