@@ -281,3 +281,27 @@ function slice(arr, arg1, arg2){
 // slice([1,2,3,4,5], 2,10) // [3,4,5)
 
 //20.
+function concat(arr, args){
+  result = arguments[0];
+  for (var i=1; i<arguments.length; i++){
+    for(var j=0; j<arguments[i].length; j++){
+      result.push(arguments[i][j]);
+    }
+  }
+  //arr.push.apply(arr, arguments);
+  return result;
+}
+// function concat(){
+//   var newArr = [];
+//   for(var i = 0; i < arguments.length; i++){
+//     for(var j = 0; j < arguments[i].length; j++){
+//       newArr.push(arguments[i][j])
+//     }
+//   }
+//   return newArr;
+// }
+// concat([1,2,3], [4,5,6]) // [1,2,3,4,5,6]
+// concat([1,2,3], [4], [5], [6]) // [1,2,3,4,5,6]
+// concat([1], [[2], [3]], [4]) // [1, [2], [3], 4]
+
+//21.
