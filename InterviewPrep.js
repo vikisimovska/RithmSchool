@@ -415,3 +415,20 @@ function any(arr, fn){
 // }
 
 //27.
+function findAll(arr, fn){
+  result = [];
+  for (var i=0; i<arr.length; i++){
+    if (fn(arr[i])) result.push(arr[i]);
+  }
+  return result;
+}
+
+// function findAll(arr, cb){
+//   var newArr = [];
+//   for(var i = 0; i < arr.length; i++){
+//     if(cb(arr[i])) newArr.push(arr[i]);
+//   }
+//   return newArr;
+// }
+
+//28.
