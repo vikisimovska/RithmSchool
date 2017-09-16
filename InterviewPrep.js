@@ -328,4 +328,12 @@ keys(obj) // ["first", "last"]
 
 var obj3 = {}
 keys(obj) // []
+
 //22.
+function values(obj){
+  arr = [];
+  for(var key in obj){
+    arr.push(obj[key]);
+  }
+  return arr;
+}
