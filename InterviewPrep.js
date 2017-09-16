@@ -337,3 +337,22 @@ function values(obj){
   }
   return arr;
 }
+//23.
+function  swapKeyAndValue(obj, key){
+  newObj = {}
+  for (var anyKey in obj){
+    if (anyKey === key){
+      newObj[obj[key]] = key
+    } else{
+      newObj[anyKey] = obj[anyKey];
+    }
+  }
+  return newObj;
+}
+
+var instructor = {name: "Elie", job: "Instructor"}
+
+swapKeyAndValue(instructor, 'name') // {Elie: 'name', job: "Instructor"}
+swapKeyAndValue(instructor, 'job') // {name: "El , Instructor: 'job'}
+
+//24.
