@@ -305,3 +305,27 @@ function concat(arr, args){
 // concat([1], [[2], [3]], [4]) // [1, [2], [3], 4]
 
 //21.
+function keys(obj){
+  keys_arr = [];
+  for(var singleKey in obj){
+    keys_arr.push(singleKey);
+  }
+  return keys_arr;
+}
+
+// function keys(obj){
+//   var arr = [];
+//   for(var key in obj){
+//     arr.push(key);
+//   }
+//   return arr;
+// }
+var obj = {a:1, b:2, c:3}
+keys(obj) // ["a","b","c"]
+
+var obj2 = {first: "Matt", last:"Lane"}
+keys(obj) // ["first", "last"]
+
+var obj3 = {}
+keys(obj) // []
+//22.
