@@ -375,3 +375,27 @@ var obj3 = {}
 entries(obj3) // []
 
 //25.
+function all(arr, fn){
+  for (var i=0; i<arr.length; i++){
+    if (fn(arr[i]) === false)
+      return false;
+  }
+  return true;
+}
+// function all(arr, cb){
+//   for(var i = 0; i < arr.length; i++){
+//     if(cb(arr[i]) === false) return false;
+//   }
+//   return true;
+// }
+
+all([1,2,3,4,5], function(val){
+  return val > 0
+}) // true
+
+
+// all([1,2,3,4,5], function(val){
+//   return val < 2
+// }) // false
+
+//26.
