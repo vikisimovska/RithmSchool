@@ -356,3 +356,22 @@ swapKeyAndValue(instructor, 'name') // {Elie: 'name', job: "Instructor"}
 swapKeyAndValue(instructor, 'job') // {name: "El , Instructor: 'job'}
 
 //24.
+function entries(obj){
+  var result = [];
+  for (var key in obj){
+    var subArr = [key, obj[key]];
+    result.push(subArr);
+  }
+  return result;
+}
+
+var obj = {a:1, b:2, c:3}
+entries(obj) // [["a",1], ["b",2], ["c",3]]
+
+var obj2 = {first: "Matt", last: "Lane", isDogOwner: true}
+entries(obj2) // [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
+
+var obj3 = {}
+entries(obj3) // []
+
+//25.
