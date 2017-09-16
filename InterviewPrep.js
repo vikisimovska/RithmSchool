@@ -432,3 +432,12 @@ function findAll(arr, fn){
 // }
 
 //28.
+function  countIf(arr, fn){
+  counter = 0;
+  for (var i=0; i<arr.length; i++){
+    if (fn(arr[i])) counter ++;
+  }
+  return counter;
+}
+
+//29.
