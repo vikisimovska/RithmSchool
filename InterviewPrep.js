@@ -487,4 +487,20 @@ function multiples(n, m){
 
 //multiples(3,4) // [3, 6, 9, 12]
 
-//32.
+//32.function pluck(arr, key){
+  result = [];
+  for (var i=0; i < arr.length; i++){
+     result.push(arr[i][key]);
+  }
+  return result;
+}
+// function pluck(arr, prop){
+//   var newArr = [];
+//   for(var i = 0; i < arr.length; i++){
+//     newArr.push(arr[i][prop])
+//   }
+//   return newArr;
+// }
+
+
+//33.
