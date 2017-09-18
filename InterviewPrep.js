@@ -441,3 +441,12 @@ function  countIf(arr, fn){
 }
 
 //29.
+function countValues(arr, num){
+  counter = 0;
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] === num) counter ++;
+  }
+  return counter;
+}
+
+//30.
