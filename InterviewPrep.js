@@ -504,3 +504,37 @@ function multiples(n, m){
 
 
 //33.
+// function twoOldestAges(arr){
+//   secondOldest = arr[0];
+//   secondIndex = undefined;
+//   oldestAge = arr[0];
+//   oldestIndex = undefined;
+// for (var i = 0; i < arr.length; i++){
+//   if (arr[i] > oldestAge){
+//     oldestAge = arr[i];
+//     oldestIndex = i;
+//   }
+// }
+// arr.splice(oldestIndex, 1);
+// //finding second index
+// for (i = 0; i < arr.length; i++){
+//   if (arr[i] > secondOldest){
+//     secondOldest = arr[i];
+//     secondIndex = i;
+//   }
+// }
+//     arr.splice(secondIndex, 1);
+//   return [secondOldest, oldestAge];
+// }
+function twoOldestAges(ages){
+  return ages.sort(function(a,b){
+    return a - b
+  }).slice(-2);
+}
+
+// twoOldestAges( [1, 2, 10, 8] ) // [8, 10]
+// twoOldestAges( [1, 2, 10, 8] ) // [8, 10]
+// twoOldestAges( [6,1,9,10,4] ) // [9,10]
+// twoOldestAges( [4,25,3,20,19,5] ) // [20,25]
+
+//34.
