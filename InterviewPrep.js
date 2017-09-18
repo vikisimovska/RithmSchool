@@ -568,3 +568,33 @@ function minMaxKeyInObject(obj){
 // minMaxKeyInObject({1: "Elie", 4:"Matt", 2: "Tim"})// [1,4]
 
 //35.
+// function stringFromObject(obj){
+//   keyArr=[]
+//   var result = "";
+//   for (var key in obj){
+//     keyArr.push(key);
+//   }
+//   for (var i=0; i < keyArr.length; i++){
+//     if (i === keyArr.length-1){
+//       result += keyArr[i] + " = " + obj[keyArr[i]];
+//     }else{
+//       result += keyArr[i] + " = " + obj[keyArr[i]] + ",";
+//     }
+//   }
+//   return result;
+// }
+
+function stringFromObject(obj){
+  var finalStr = ''
+  for(var key in obj){
+    finalStr += key + ' = ' + obj[key] + ','
+  }
+  console.log(finalStr);
+  return finalStr.slice(0,-1);
+}
+
+stringFromObject({a: 1, b: '2'}) // "a = 1,b = 2"
+//stringFromObject({name:"Elie", job:"Instructor", isCatOwner:false}) // "name = Elie,job = Instructor,isCatOwner = false"
+//stringFromObject({}) // ""
+
+//36.
