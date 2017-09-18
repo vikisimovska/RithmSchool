@@ -538,3 +538,33 @@ function twoOldestAges(ages){
 // twoOldestAges( [4,25,3,20,19,5] ) // [20,25]
 
 //34.
+function minMaxKeyInObject(obj){
+  keys = []
+  for(var key in obj){
+    keys.push(key);
+  }
+  //console.log(keys);
+  return [parseInt(keys[0], 10), parseInt(keys[keys.length-1], 10)];
+}
+// function minKey(obj){
+//   var min = Infinity
+//   for(var key in obj){
+//     if(+key < min) min = +key
+//   }
+//   return min;
+// }
+
+// function maxKey(obj){
+//   var max = -Infinity
+//   for(var key in obj){
+//     if(+key > max) max = +key
+//   }
+//   return max;
+// }
+
+// function minMaxKeyInObject(obj){
+//     return [minKey(obj), maxKey(obj)]}
+// minMaxKeyInObject({2:'a', 7:'b', 1:'c',10:'d',4:'e'})// [1,10]
+// minMaxKeyInObject({1: "Elie", 4:"Matt", 2: "Tim"})// [1,4]
+
+//35.
