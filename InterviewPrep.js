@@ -461,3 +461,30 @@ function squareEvenNumbers(arr){
 }
 
 //31.
+function multiples(n, m){
+  arr = [];
+  multiplyBy = 1;
+  num = n;
+  while (true){
+    arr.push(n*multiplyBy);
+    if (n*multiplyBy % m === 0)
+    {
+      return arr;
+    }
+    else
+    {
+       multiplyBy ++;
+    }
+  }
+}
+// function multiples(num, mult){
+//   var arr=[];
+//   for(var i=1; i <= mult; i++){
+//     arr.push(i*num);
+//   }
+//   return arr;
+// }
+
+//multiples(3,4) // [3, 6, 9, 12]
+
+//32.
