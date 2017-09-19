@@ -678,3 +678,17 @@ reject([2,3,4,5], function(val){
 // when invoked, increments the counter by 1 and returns the count variable.
 //You should be able to create multiple counters with the createCounter function
 // and they should all have their own private variable called count.
+
+function createCounter(){
+  var count = 0;
+  return function (){
+    return ++ count
+  }
+}
+var c = createCounter
+
+// c - will return function!
+// and if you call it, it will return 1. Then if you call it again it will
+//return 2 ..
+//c(); //returns 1
+//c(); // returns 2
