@@ -671,4 +671,4 @@ reject([1,2,3,4], function(val){
 
 reject([2,3,4,5], function(val){
     return val % 2 === 0;
-}); // [3,5]
+});  // [3,5]
