@@ -212,4 +212,24 @@ let userN = {
     alert(userN.name);
   }
 };
+//But such code is unreliable. If we decide to copy user to another variable, e.g.
+ //admin = user and overwrite user with something else, then it will access the
+ //wrong object.
+
+ let user = {
+   name: "John",
+   age: 30,
+
+   sayHi() {
+     alert( user.name ); // leads to an error
+   }
+
+ };
+
+ let admin = user;
+ user = null; // overwrite to make things obvious
+
+//error inside sayHi(), the old name is used!!!
+ admin.sayHi(); // Whoops! inside sayHi(), the old name is used! error!
+
 //*****************************************************************
