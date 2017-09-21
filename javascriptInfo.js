@@ -214,7 +214,8 @@ let userN = {
 };
 //But such code is unreliable. If we decide to copy user to another variable, e.g.
  //admin = user and overwrite user with something else, then it will access the
- //wrong object.
+ //wrong object.If we used this.name instead of user.name inside the alert, then 
+ //the code would work.
 
  let user = {
    name: "John",
@@ -230,6 +231,8 @@ let userN = {
  user = null; // overwrite to make things obvious
 
 //error inside sayHi(), the old name is used!!!
+//If we used this.name instead of user.name inside the alert, then
+//the code would work.
  admin.sayHi(); // Whoops! inside sayHi(), the old name is used! error!
 
 //*****************************************************************
