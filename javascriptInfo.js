@@ -1,3 +1,7 @@
+//THIS IS HOW YOU DISPLAY/PRINT ANY OBJ WITH THE CONTENT INSIDE!!
+//alert(user.toSource());
+console.dir(ANYobject);
+
 // Let's try to write a function called each which accepts two parameters: an array and a callback function. The each function should loop over the array passed to it and run the callback function on each element in it.
 
 function each(arr, fn){
