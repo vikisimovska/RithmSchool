@@ -192,6 +192,7 @@ let usery = {
 };
 alert(usery.dir()); // Hello!
 //*****************************************************************
+//To access the object, a method can use the this keyword.
 let userNamee = {
   name: "John",
   age: 30,
@@ -200,5 +201,15 @@ let userNamee = {
     alert(this.name);
   }
 };
+//user.sayNamee(); // John
 
-user.sayNamee(); // John
+//OR without 'this', userNamee instead..
+let userN = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert(userN.name);
+  }
+};
+//*****************************************************************
