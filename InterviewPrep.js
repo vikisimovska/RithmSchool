@@ -682,7 +682,8 @@ reject([2,3,4,5], function(val){
 function createCounter(){
   var count = 0;
   return function (){
-    return ++ count
+    var innerCount = 102;
+    return ++count + innerCount;
   }
 }
 var c = createCounter
