@@ -214,7 +214,7 @@ let userN = {
 };
 //But such code is unreliable. If we decide to copy user to another variable, e.g.
  //admin = user and overwrite user with something else, then it will access the
- //wrong object.If we used this.name instead of user.name inside the alert, then 
+ //wrong object.If we used this.name instead of user.name inside the alert, then
  //the code would work.
 
  let user = {
@@ -236,3 +236,26 @@ let userN = {
  admin.sayHi(); // Whoops! inside sayHi(), the old name is used! error!
 
 //*****************************************************************
+
+//In JavaScript, “this” keyword behaves unlike most other programming languages.
+// First, it can be used in any function.For instance, the same function may
+//have different “this” when called from different objects:
+
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+//!!!!!THIS IS HOW YOU ASSIGN A FUNCTION TO THE OBJECT!!!!!
+// use the same functions in two objects
+user.f = sayHi;
+admin.f = sayHi;
+
+// these calls have different this
+// "this" inside the function is the object "before the dot"
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin['f'](); // Admin (dot or square brackets access the method – doesn't matter)
