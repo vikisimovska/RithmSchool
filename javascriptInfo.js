@@ -252,10 +252,15 @@ function sayHi() {
   alert( this.name );
 }
 
-//!!!!!THIS IS HOW YOU ASSIGN A FUNCTION TO THE OBJECT!!!!!
+//!!!!!THIS IS HOW TO ASSIGN A FUNCTION TO THE OBJECT!!!!!
 // use the same functions in two objects
 user.f = sayHi;
 admin.f = sayHi;
+
+//THIS IS HOW YOU DISPLAY/PRINT ANY OBJ WITH THE CONTENT INSIDE!!
+//alert(user.toSource());
+console.dir(admin);
+console.dir(user);
 
 // these calls have different this
 // "this" inside the function is the object "before the dot"
@@ -263,3 +268,81 @@ user.f(); // John  (this == user)
 admin.f(); // Admin  (this == admin)
 
 admin['f'](); // Admin (dot or square brackets access the method – doesn't matter)
+
+//*****************************************************************
+
+//Actually, we can call the function without an object at all, DESPITE THE 'this'
+// keyword in it:
+function sayHi() {
+  alert(this);
+}
+
+sayHi(); // undefined
+
+//In this case 'this' is undefined in strict mode. If we try to access this.name,
+//there will be an error!!
+
+//In non-strict mode (if one forgets use strict) the value of this in such case
+//will be the global object (window in a browser, we’ll get to it later).
+//This is a historical behavior that "use strict" fixes.
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Please note that usually a call of a function that uses this without an object
+// is not normal, but rather a programming mistake. If a function has this, then
+// it is usually meant to be called in the context of an object.
+
+If you come from another programming language, then you are probably used to the
+idea of a "bound this", where methods defined in an object always have this
+referencing that object.
+
+In JavaScript this is “free”, its value is evaluated at call-time and does not
+depend on where the method was declared, but rather on what’s the object “before
+ the dot”.
+
+The concept of run-time evaluated this has both pluses and minuses. On the one
+hand, a function can be reused for different objects. On the other hand, greater
+flexibility opens a place for mistakes.
+
+//*****************************************************************
+
+//So, how does the information about this gets passed from the first part to the
+//second one?
+
+let user = {
+  name: "John",
+  hi() { alert(this.name); }
+}
+
+// split getting and calling the method in two lines
+let hi = user.hi;
+hi(); // Error, because this is undefined
+
+//Here hi = user.hi puts the function into the variable, and then on the last line it is completely standalone, and so there’s no this.
+
+To make user.hi() calls work, JavaScript uses a trick – the dot '.' returns not
+a function, but a value of the special Reference Type.
+The Reference Type is a “specification type”. We can’t explicitly use it, but it
+is used internally by the language.
+The value of Reference Type is a three-value combination (base, name, strict),
+where:
+
+base is the object.
+name is the property.
+strict is true if use strict is in effect.
+The result of a property access user.hi is not a function, but a value of
+Reference Type. For user.hi in strict mode it is:
+
+// Reference Type value
+(user, "hi", true)
+
+When parentheses () are called on the Reference Type, they receive the full
+information about the object and it’s method, and can set the right this
+(=user in this case).
+
+Any other operation like assignment hi = user.hi discards the reference type as
+a whole, takes the value of user.hi (a function) and passes it on. So any
+further operation “loses” this.
+
+So, as the result, the value of this is only passed the right way if the
+function is called directly using a dot obj.method() or square brackets
+obj[method]() syntax (they do the same here).
