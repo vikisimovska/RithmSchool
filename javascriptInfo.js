@@ -345,4 +345,4 @@ further operation “loses” this.
 
 So, as the result, the value of this is only passed the right way if the
 function is called directly using a dot obj.method() or square brackets
-obj[method]() syntax (they do the same here).
+obj[method]() syntax (they do  the same here).
