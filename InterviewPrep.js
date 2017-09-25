@@ -721,7 +721,7 @@ var instructorModule = (function createInstructors(){
 })();
 
 //*****************************
-//2 version CLOSURE-PRIVATE VAR's!!!! using IIFEs (MODULE)
+//2 version CLOSURE-PRIVATE VAR's!!! using IIFEs (MODULE)
 var instructorModuleRefactored = (function createInstructors(){
     var instructors = ["Elie", "Matt", "Tim"];
     function displayAllInstructors(){
