@@ -693,3 +693,49 @@ var c = createCounter
 //return 2 ..
 //c(); //returns 1
 //c(); // returns 2
+
+function defineAge(){
+    var age = 28;
+    return function growUp(){
+        return ++age;
+    }
+}
+//defineAge()();
+// var ageOnce = defineAge();
+// ageOnce(); // 29
+// ageOnce(); // 30
+
+//*****************************
+//1st version CLOSURE-PRIVATE VAR's!!!, using IIFEs (MODULE)
+var instructorModule = (function createInstructors(){
+    var instructors = ["Elie", "Matt", "Tim"];
+    return {
+        showInstructors: function displayAllInstructors(){
+            return instructors;
+        },
+        addInstructor: function addNewInstructor(instructor){
+            instructors.push(instructor)
+            return instructors;
+        }
+    }
+})();
+
+//*****************************
+//2 version CLOSURE-PRIVATE VAR's!!!! using IIFEs (MODULE)
+var instructorModuleRefactored = (function createInstructors(){
+    var instructors = ["Elie", "Matt", "Tim"];
+    function displayAllInstructors(){
+        return instructors;
+    }
+    function addNewInstructor(instructor){
+        instructors.push(instructor);
+        return instructors;
+    }
+    return {
+        showInstructors: displayAllInstructors,
+        addInstructor: addNewInstructor
+    }
+})();
+// instructorModuleRefactored.showInstructors();
+// instructorModuleRefactored.addInstructor('billy');
+//*****************************
