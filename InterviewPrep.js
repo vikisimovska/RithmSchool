@@ -741,3 +741,15 @@ var instructorModuleRefactored = (function createInstructors(){
 //*****************************
 
 //var keyword hoists and scopes wherever its declared
+
+function classroom(){
+  var students=["viki"];
+  return {
+  	getStudent:function (){
+  		return students;
+  	},
+    addStudent: function(name){
+    	return students.push(name);
+    }
+  }
+}
