@@ -58,7 +58,7 @@ function stringLastIndexOf(str, char){
 
 //7.
 function repeat(str, num){
-  newStr = ""
+  newStr = "";
   for (var i = 0; i < num; i++){
     newStr += str;
   }
@@ -70,7 +70,7 @@ function repeat(str, num){
 
 //8.
 function removeFromString(str, i, n){
-  return str.replace(str.substr(i, n), "")
+  return str.replace(str.substr(i, n), "");
 }
 //9.
 function includes(arr, num){
@@ -133,7 +133,7 @@ function pop(arr){
   return l;
 }
 
-//14.
+// 14.
 function unshift(arr, num){
   temp_arr = [];
   arr.forEach(function(element) {
@@ -714,7 +714,7 @@ var instructorModule = (function createInstructors(){
             return instructors;
         },
         addInstructor: function addNewInstructor(instructor){
-            instructors.push(instructor)
+            instructors.push(instructor);
             return instructors;
         }
     }
@@ -739,3 +739,5 @@ var instructorModuleRefactored = (function createInstructors(){
 // instructorModuleRefactored.showInstructors();
 // instructorModuleRefactored.addInstructor('billy');
 //*****************************
+
+//var keyword hoists and scopes wherever its declared
