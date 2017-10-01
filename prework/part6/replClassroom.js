@@ -61,7 +61,23 @@ function buildFrequency(val){
 //function should return an array with the first element. If the second parameter is greater than the 
 //ength of the array, return a copy of the entire array.
 
-//their soution!!
+//my solution
+
+function take(arr, el=1){
+  if (el >= arr.length) el = arr.length;
+  var result = [];
+  for (var i = 0; i < el; i++){
+    result.push(arr[i]);
+  }
+  return result;
+}
+
+// take([1, 2, 3]) // [1]
+// take([1, 2, 3], 2) // [1, 2]
+// take([1, 2, 3], 5) // [1, 2, 3]
+// take([1, 2, 3], 0) // []
+
+//GREAT SOLUTION!! their soution!!
 function take(arr, n){
     if(n === 0){
         return [];
