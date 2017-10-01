@@ -35,7 +35,7 @@ function sameFrequency(num1, num2){
 //sameFrequency(321142,3212215) // false
 //sameFrequency(1212, 2211)// true
 
-//
+//their solution
 
 function sameFrequency(num1,num2){
   var o1 = buildFrequency(num1)
