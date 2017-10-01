@@ -55,3 +55,19 @@ function buildFrequency(val){
   }
   return obj;
 }
+
+//3.
+
+//their soution!!
+function take(arr, n){
+    if(n === 0){
+        return [];
+    }
+    if(n >= arr.length){
+        return arr.slice()
+    }
+    if(n < arr.length){
+        return arr.slice(0,n)
+    }
+    return arr.slice(0,1)
+}
