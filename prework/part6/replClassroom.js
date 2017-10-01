@@ -5,7 +5,6 @@
 
 //1.Write a function called rangeInArray which accepts an array and start and end indices,  and returns
 //the sum of the values between (and including) the start and end index. 
-
 //If a start parameter is not passed in, it should default to zero. If an end parameter is not passed in, 
 //it should default to the last value in the array. Also, if the end argument is too large, the sum should 
 //still go through the end of the array.
@@ -17,4 +16,25 @@ function rangeInArray(arr, num1=0, num2=arr[arr.length-1]){
     sum += arr[i];  
   }
   return sum;
+}
+
+//2.
+
+function sameFrequency(num1,num2){
+  var o1 = buildFrequency(num1)
+  var o2 = buildFrequency(num2);
+  for(var key in o1){
+    if(!o2.hasOwnProperty(key)) return false
+    if(o2[key] !== o1[key]) return false
+  }
+  return true
+}
+
+function buildFrequency(val){
+  var obj = {};
+  var str = val.toString();
+  for(var i = 0; i < str.length; i++){
+    obj[str[i]] = (obj[str[i]] || 1) + 1
+  }
+  return obj;
 }
