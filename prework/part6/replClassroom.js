@@ -18,7 +18,24 @@ function rangeInArray(arr, num1=0, num2=arr[arr.length-1]){
   return sum;
 }
 
-//2.
+//2.Write a function called sameFrequency which accepts two numbers and returns true if they contain the
+// same frequency of digits. Otherwise, it returns false.
+
+//my solution
+function sameFrequency(num1, num2){
+  n1 = num1.toString().split("");
+  n2 = num2.toString().split("");
+  n1 = n1.sort(function(a, b){return a-b});
+  n2 = n2.sort(function(a, b){return a-b});
+
+  return parseInt(n1.join("")) === parseInt(n2.join(""));
+}
+
+//sameFrequency(551122,221515) // true
+//sameFrequency(321142,3212215) // false
+//sameFrequency(1212, 2211)// true
+
+//
 
 function sameFrequency(num1,num2){
   var o1 = buildFrequency(num1)
