@@ -91,7 +91,7 @@ function take(arr, n){
     return arr.slice(0,1)
 }
 
-//4.Write a function called includes which accepts a collection, a value, and an optional starting index. 
+//5.Write a function called includes which accepts a collection, a value, and an optional starting index. 
 //he function should return true if the value exists in the collection when we search starting from the 
 //starting index. Otherwise, it should return false.
 
@@ -146,7 +146,13 @@ function includes(item,val,startIdx){
 //includes('abcd', 'b') // true
 //includes('abcd', 'e') // false
 
-//5.
+//7.Write a function called forEach, which accepts an array and a callback. forEach should iterate
+// through the array and run a callback function for each value in the array. The callback function
+// should accept as its first argument the current array element, and as its second element the 
+//current array index. Also, forEach should always return undefined.
+
+
+
 
 
 
