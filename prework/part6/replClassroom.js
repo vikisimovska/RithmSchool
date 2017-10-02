@@ -119,11 +119,34 @@ function valueCheck(coll, val, optIndx=0){
   return false;
 }
 
+//their solution
+//look at the use of indexOf and slice mrthod in the second part!!
+
+function includes(item,val,startIdx){
+
+  if(!Array.isArray(item) && typeof item !== 'string') {
+    for(var key in item) {
+      if(val === item[key]) {
+        return true
+      }
+    }
+    return false;
+  }
+
+  if(startIdx === undefined) {
+    return item.indexOf(val) > -1
+  }
+
+  return item.slice(startIdx).indexOf(val) > -1
+}
+
 //ncludes([1, 2, 3], 1, 2) // false 
 //includes({ 'a': 1, 'b': 2 }, 1) // true 
 //includes({ 'a': 1, 'b': 2 }, 'a') // false
 //includes('abcd', 'b') // true
 //includes('abcd', 'e') // false
+
+//5.
 
 
 
