@@ -151,6 +151,30 @@ function includes(item,val,startIdx){
 // should accept as its first argument the current array element, and as its second element the 
 //current array index. Also, forEach should always return undefined.
 
+function forEach(arr, callback){
+  for (var i=0; i<arr.length; i++){
+    callback(arr[i], i);
+  }
+  return undefined;
+}
+
+// var emptyArr = []
+// forEach([1,2,3,4], function(val){
+//   emptyArr.push(val*10);
+// });
+// emptyArr; // [10,20,30,40]
+
+// var arr = [1,2,3];
+// forEach(arr, function(val, idx){
+//   arr[idx] += 5;
+// });
+// arr; // [6,7,8]
+
+// var isUndefined = forEach(["a","b","c"], function(){
+//   return "hi";
+// });
+// isUndefined; // undefined
+
 
 
 
