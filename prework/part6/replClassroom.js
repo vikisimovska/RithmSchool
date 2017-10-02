@@ -90,3 +90,40 @@ function take(arr, n){
     }
     return arr.slice(0,1)
 }
+
+//4.
+
+function includes(collection, value, optionalIndex){
+  if (Array.isArray(collection) || typeof collection === 'string'){
+      return  valueCheck(collection, value, optionalIndex);
+  }
+  if (typeof collection == 'object'){
+    for (var key in collection){
+      if (collection[key] === value) return true;
+    }
+    return false;
+  }
+}
+
+function valueCheck(coll, val, optIndx=0){
+  for (var i=optIndx; i < coll.length; i++){
+    if (coll[i] === val) return true;
+  }
+  return false;
+}
+
+//ncludes([1, 2, 3], 1, 2) // false 
+//includes({ 'a': 1, 'b': 2 }, 1) // true 
+//includes({ 'a': 1, 'b': 2 }, 'a') // false
+//includes('abcd', 'b') // true
+//includes('abcd', 'e') // false
+
+
+
+
+
+
+
+
+
+
