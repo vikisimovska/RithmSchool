@@ -13,3 +13,19 @@ function doubleValues(arr){
   });
   return newArr;
 }
+
+/*2.
+Write a function called onlyEvenValues which accepts an array and returns a new array with only the even values in the array passed to the function
+
+Examples:
+    onlyEvenValues([1,2,3]) // [2]
+    onlyEvenValues([5,1,2,3,10]) // [2,10]
+
+*/
+function onlyEvenValues(arr){
+    var newArr = [];
+    arr.forEach(function callback(val, i, arr){
+        if (val%2 === 0) newArr.push(val);
+    });
+    return newArr;
+}
