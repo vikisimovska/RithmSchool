@@ -71,12 +71,40 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-  var result = {};
-  var vowels="aeiouAEIOU";
-  str.split("").forEach(function callback(val, i, arr){
-          if(vowels.includes(val)){ 
+    var result = {};
+    var vowels="aeiouAEIOU";
+    str.split("").forEach(function callback(val, i, arr){
+        if(vowels.includes(val)){ 
             result[val.toLowerCase()] = (result[val.toLowerCase()] || 0) + 1;
           }
   });
   return result;
 }
+
+//their solution
+function vowelCount(str){
+    var result = {};
+    var vowels="aeiouAEIOU";
+    str.split("").forEach(function callback(val, i, arr){
+        if(vowels.indexOf(val) !=== -1){ 
+        	if (val.toLowerCase() in result){
+        		result[val.toLowerCase()]++; 
+        	}else{
+        		result[val.toLowerCase()] = 1; 
+        	}
+        }           
+  });
+  return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
