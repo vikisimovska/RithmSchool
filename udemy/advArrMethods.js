@@ -32,7 +32,7 @@ function onlyEvenValues(arr){
 
 
 /*
-Write a function called showFirstAndLast which accepts an array and returns a new array with only the even values in the array passed to the function
+Write a function called showFirstAndLast which accepts an array and returns a new array with only the  even values in the array passed to the function
 
 Examples:
     showFirstAndLast(['colt','matt', 'tim', 'udemy']) // ["ct", "mt", "tm", "uy"]
