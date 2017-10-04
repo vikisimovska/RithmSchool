@@ -31,7 +31,7 @@ function onlyEvenValues(arr){
 }
 
 
-/*
+/*3.
 Write a function called showFirstAndLast which accepts an array and returns a new array with only the  even values in the array passed to the function
 
 Examples:
@@ -46,5 +46,18 @@ function showFirstAndLast(arr){
         newArr.push(val[0]+val[val.length-1]);
     });
     return newArr;
+}
+/*4.
+Write a function called addKeyAndValue which accepts an array, a key, and a value and returns a the array passed to the function with the new key and value added for each variable 
+
+Examples:
+    addKeyAndValue([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}]) // [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
+
+*/
+function addKeyAndValue(arr,key,value){
+    arr.forEach(function callback(val, i, arr){
+        val[key]=value;
+    });
+    return arr;
 }
 
