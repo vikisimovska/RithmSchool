@@ -29,3 +29,22 @@ function onlyEvenValues(arr){
     });
     return newArr;
 }
+
+
+/*
+Write a function called showFirstAndLast which accepts an array and returns a new array with only the even values in the array passed to the function
+
+Examples:
+    showFirstAndLast(['colt','matt', 'tim', 'udemy']) // ["ct", "mt", "tm", "uy"]
+    showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
+
+*/
+function showFirstAndLast(arr){
+    var newArr = [];
+    arr.forEach(function callback(val, i, arr){
+        //if (val.length % 2 === 0)
+        newArr.push(val[0]+val[val.length-1]);
+    });
+    return newArr;
+}
+
