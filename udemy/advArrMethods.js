@@ -70,6 +70,7 @@ Examples:
     vowelCount('hmmm') // {};
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
+//CHECK THIS SOLUTION!!
 function vowelCount(str){
     var result = {};
     var vowels="aeiouAEIOU";
@@ -81,7 +82,7 @@ function vowelCount(str){
   return result;
 }
 
-//their solution
+//CHECK THIS SOLUTION: their solution
 function vowelCount(str){
     var result = {};
     var vowels="aeiouAEIOU";
@@ -96,7 +97,7 @@ function vowelCount(str){
   });
   return result;
 }
-
+//7.https://www.udemy.com/the-advanced-web-developer-bootcamp/learn/v4/t/lecture/7306846?start=0
 
 
 
