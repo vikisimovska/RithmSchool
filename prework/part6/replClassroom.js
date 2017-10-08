@@ -175,7 +175,13 @@ function forEach(arr, callback){
 // });
 // isUndefined; // undefined
 
-
+//REVERSE ARRAY using DESTRUCTURING from ES2015!!
+function reverseArray(arr){
+	for (var i=0; i < arr.length/2; i++){
+		[arr[i], arr[arr.length-1-i]] = [arr[arr.length-1-i], arr[i]];
+	}
+	return arr;
+}
 
 
 
