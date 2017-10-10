@@ -176,12 +176,18 @@ function forEach(arr, callback){
 // isUndefined; // undefined
 
 //REVERSE ARRAY using DESTRUCTURING from ES2015!!
+//soooo COOL!!!!
 function reverseArray(arr){
 	for (var i=0; i < arr.length/2; i++){
 		[arr[i], arr[arr.length-1-i]] = [arr[arr.length-1-i], arr[i]];
 	}
 	return arr;
 }
+
+//8.Write a function called filter which accepts an array and a callback. The function 
+//should return a new array consisting of elements from the original array that return 
+//truthy values when passed into the callback. Also, the original array should not be 
+//affected.
 
 
 
