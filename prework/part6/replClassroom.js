@@ -233,7 +233,22 @@ function some(arr, callback){
 //start with start then set to 0. If start is greater than end the params are swapped.
 
 
+function inRange(num,start,end){
+  if(arguments.length === 2){
+    end = arguments[1]
+    start = 0
+  }
+  if (end < start)  [start, end] = [end, start];
+   
+  return num >= start && num < end;
+}
 
+//13.Write a function called every which accepts an array and a callback. Every should return 
+//true if the result of the callback at each value is truthy; otherwise it should return false. 
+//The callback accepts as its arguments the current array element, the current array index, and 
+//the entire array.
+
+//Every should not mutate the input array.
 
 
 
