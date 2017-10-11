@@ -343,6 +343,12 @@ function padEnd(str, num, char){
 
 //Since drop returns a new array, it should not mutate the original array.
 
+function drop(arr, num){
+  newArr = [];
+  if (num > arr.length) return newArr;
+  else if (arguments.length == 1) return arr.slice(1);
+  else return arr.slice(num);
+}
 
 
 
