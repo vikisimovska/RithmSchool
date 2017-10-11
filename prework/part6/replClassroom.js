@@ -294,6 +294,35 @@ function repeat(str, num){
 //original string is simply returned.
 
 
+function padEnd(str,num, pad){
+  if (num < str.length) return str;
+  if (str.length < num){
+    if (arguments.length === 3){
+      let diff = Math.ceil((num-str.length)/pad.length);
+      for (let i = 0; i < diff; i++){
+          str += pad;
+      }
+    }
+    else if ( arguments.length === 2) {
+      let diff2 = num-str.length;
+      for (let k = 0; k < diff2; k++){
+         str += " ";
+      }
+    }
+  }
+  
+  if (str.length > num) str = str.slice(0,num);
+  return str;
+}
+
+
+
+
+
+
+
+
+
 
 
 
