@@ -228,7 +228,32 @@ function some(arr, callback){
   return false;
 }
 
-//11.
+//12.Write a function called inRange, which takes in number n, start, and end, and checks if
+// n is between start and up to, but not including, end. If end is not specified, it's set to 
+//start with start then set to 0. If start is greater than end the params are swapped.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
