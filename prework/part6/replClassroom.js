@@ -261,12 +261,26 @@ function every(array, callback){
 //with the string passed to the function repeated the number amount of times. Do not use the built 
 //in repeat method!
 
+function repeat(str, num){
+  newStr = "";
+  for (let i=0; i < num; i++){
+    newStr += str;
+  }
+  return newStr;
+}
 
+//their solution using concat
 
-
-
-
-
+function repeat(str, num){
+  if(num === 0) {
+    return ''
+  }
+  var newStr = ''
+  for(var i = 0; i < num; i++){
+    newStr = newStr.concat(str);
+  }
+  return newStr;
+}
 
 
 
