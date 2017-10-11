@@ -213,7 +213,28 @@ function map(arr, callback){
   return newArr;
 }
 
-//10.
+//10.Write a function called some which accepts an array and a callback. Some should 
+//return true if the result of the callback at any value is truthy; otherwise it should 
+//return false. The callback accepts as its arguments the current array element, the current
+// array index, and the entire array.
+
+//Some should not mutate the input array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
