@@ -205,9 +205,15 @@ function filter(arr, callback){
 
 //Since map returns a new array, it should not mutate the original array passed into it.
 
+function map(arr, callback){
+  newArr = [];
+  for (let i=0; i<arr.length; i++){
+    newArr.push(callback(arr[i], i, arr));
+  }
+  return newArr;
+}
 
-
-
+//10.
 
 
 
