@@ -315,7 +315,26 @@ function padEnd(str,num, pad){
   return str;
 }
 
+//their solution
 
+function padEnd(str, num, char){
+    if(str.length >= num){
+        return str;
+    }
+
+    var newStr = '';
+    if(char === undefined){
+        for(var i = 0; i < num-str.length; i++){
+            newStr += ' ';
+        }
+        return str.concat(newStr);
+    }
+
+    for(var i = 0; i < num-str.length; i++){
+        newStr += char[i % char.length];
+    }
+    return str.concat(newStr);
+}
 
 
 
