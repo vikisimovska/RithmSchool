@@ -189,6 +189,16 @@ function reverseArray(arr){
 //truthy values when passed into the callback. Also, the original array should not be 
 //affected.
 
+function filter(arr, callback){
+  var newArr = [];
+  for (let i=0; i<arr.length; i++){
+    if (callback(arr[i])) newArr.push(arr[i]);
+  }
+  return newArr;
+}
+
+//.9
+
 
 
 
