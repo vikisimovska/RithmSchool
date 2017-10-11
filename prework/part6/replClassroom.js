@@ -220,6 +220,15 @@ function map(arr, callback){
 
 //Some should not mutate the input array.
 
+function some(arr, callback){
+  for (let i=0; i < arr.length; i++){
+    if (callback(arr[i], i, arr))  
+      return true;
+  }
+  return false;
+}
+
+//11.
 
 
 
