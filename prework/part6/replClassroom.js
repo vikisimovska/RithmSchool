@@ -371,6 +371,17 @@ function tap(value, cb){
   return value;
 }
 
+//18.Write a function called findIndex, which accepts an array and a callback. The function should return 
+//the index where the callback first returns a truthy value. If the callback never returns a truthy value,
+// findIndex should return -1.
+
+function findIndex(arr, cb){
+  for (let i=0; i<arr.length; i++){
+    if (cb(arr[i])) return i;
+  }
+  return -1;
+}
+
 
 
 
