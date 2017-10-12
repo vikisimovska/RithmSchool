@@ -392,6 +392,12 @@ function linearSearch(arr, value){
   return -1;
 }
 
+//20.Write a function called head which returns the first element of the input array.
+
+function head(arr){
+  return arr[0];
+}
+
 
 
 
