@@ -365,6 +365,11 @@ function tap(arr, callback){
   return arr;
 }
 
+//their solution with 'cb' named fn
+function tap(value, cb){
+  cb(value)
+  return value;
+}
 
 
 
