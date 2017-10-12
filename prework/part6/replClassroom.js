@@ -398,6 +398,18 @@ function head(arr){
   return arr[0];
 }
 
+//21.Write a function called isNil, which should return true if the input is `null` or `undefined`.
+
+function isNil(value){
+  if (value === null || value === undefined) return true;
+  return false;
+}
+
+//their solution
+function isNil(num){
+  return num == null;
+}
+
 
 
 
