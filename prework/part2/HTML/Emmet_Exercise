@@ -1,0 +1,9 @@
+~Emmet Exercises Solutions:
+
+h1  tab
+div>p>section>h1{Nice}  tab
+ul{outside}>li{inside}*4  tab
+p{sibling 1}+div{sibling 2}+p{parent}>div{child}>div{grandchild}  tab
+
+~HTML Basic Excercises:
+
