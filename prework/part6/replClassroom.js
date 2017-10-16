@@ -410,6 +410,116 @@ function isNil(num){
   return num == null;
 }
 
+//******************************************************
+
+//22.Write a function called isOddString which returns true if sum of each character's
+// position in the alphabet is odd. For example, "a" is in the first position, "b" is 
+//in the second position, and so on. If the sum is even, return false.
+
+function isOddString(str){
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let sum = 0;
+  for(let i=0; i<str.length; i++){
+    sum += alphabet.indexOf(str[i])+1;
+  }
+  return sum % 2 === 1;
+}
+
+//their solution
+
+function isOddString(str){
+  var lower = str.toLowerCase();
+  var total = 0;
+  for(var i = 0; i < lower.length; i++){
+    total += lower[i].charCodeAt(0) - 96
+  }
+  return total % 2 === 1
+}
+
+//23.Write a function called pick, which accepts an object and an array of keys and 
+//returns a new object with all of the keys that are in the array passed to pick. 
+//If an array element doesn't correspond to a valid key, the element is simply ignored.
+
+function pick(obj, arr){
+  newObj = {};
+  for (let i=0; i<arr.length; i++){
+    if (arr[i] in obj) newObj[arr[i]] = obj[arr[i]];
+  }
+  return newObj;
+}
+
+//their solution with hasOwnProperty
+function pick(obj, arr){
+  var newObj = {};
+  for(var i = 0; i < arr.length; i++){
+    if (obj.hasOwnProperty(arr[i])) {
+      newObj[arr[i]] = obj[arr[i]]
+    }
+  }
+  return newObj;
+}
+
+//24.Write a function called flatten, which flattens an array a single level deep. 
+//In other words, if you have one levels of nesting in your arrays, it will remove 
+//one level of nesting.
+
+
+function flatten(arr){
+  newArr = [];
+  for (let i=0; i < arr.length; i++){
+    if (Array.isArray(arr[i])){
+      for (let j=0; j < arr[i].length; j++){
+        newArr.push(arr[i][j]);
+      }
+    }
+    else{
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+//their solution with concat instead of a for loop(thats what concat does under the hood!!)
+
+function flatten(arr){
+    var newArr = [];
+    for(var i = 0; i<arr.length; i++){
+        if(Array.isArray(arr[i])){
+            newArr = newArr.concat(arr[i]);
+        } else {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+
+//25.Write a function called clamp, which accepts three parameters: a number, a lower bound,
+// and an upper bound. The function should return the number if it is in between the lower 
+//and upper bounds. Otherwise, the function should return lower if number is less than lower, 
+//or upper if number is greater than upper.
+
+function clamp(num, lower, upper){
+  if (num >= lower && num <= upper) return num;
+  else if (num < lower) return lower;
+  else return upper;
+}
+
+//their solution
+
+function clamp(num, lower, upper) {
+  return Math.min(Math.max(num, lower), upper);
+}
+
+//26. Write a function called find which accepts an array and a callback. The function should
+// return the first value for which the callback returns a truthy value. If the callback never
+// returns a truthy value, the function should return undefined.
+
+function find(arr, callback){
+  for (let i=0; i<arr.length; i++){
+    if (callback(arr[i])) return arr[i];
+  }
+  return undefined;
+}
 
 
 
