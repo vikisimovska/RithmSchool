@@ -530,9 +530,18 @@ function find(arr,callback){
   }
 }
 
-//27.
+//27.Write a function called omit, which accepts an object and an array of keys and returns a new
+// object with the keys from the array omitted. If an array element doesn't correspond to a valid
+// key, the element is simply ignored.
 
-
+function omit(obj, arr){
+  let newObj={};
+  for (let key in obj){
+    if (!arr.includes(key)) newObj[key] = obj[key];
+  }
+  
+  return newObj;
+}
 
 
 
