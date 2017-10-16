@@ -543,6 +543,20 @@ function omit(obj, arr){
   return newObj;
 }
 
+//their solution
+function omit(obj, keysToOmit){
+  var newObj = {};
+  for(var key in obj){
+    if(keysToOmit.indexOf(key) === -1 ){
+      newObj[key] = obj[key]
+    }
+  }
+  return newObj;
+}
+
+//28.Writ a function called createMatrix which takes in two whole numbers, n and m, and creates a
+//two-dimensional array with n columns and m rows. All of the values inside of your array should be 0.
+
 
 
 
