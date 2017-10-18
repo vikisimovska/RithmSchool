@@ -619,7 +619,21 @@ function isPrime(num){
   }
   return num !== 1;
 }
-//31.
+//31. Write a function called nth, which accepts an array and a number and returns the 
+//element at whatever index is the number in the array. If the number is negative, the 
+//nth element from the end is returned. 
+
+function nth(arr, num){
+  if (num < 0){
+    let i = Math.abs(num);
+    let reverseArr = arr.reverse();
+    return reverseArr[i-1];
+  }else{
+    return arr[num];
+  }
+}
+
+//32.
 
 
 
