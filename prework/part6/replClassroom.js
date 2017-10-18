@@ -568,6 +568,21 @@ function createMatrix(n, m){
   return arr;
 }
 
+//their solution...VERY CLEAR!!
+function createMatrix(columns, rows){
+  var arr = [];
+  for(var i = 0; i < rows; i++){
+    var nestedArr = []
+    for(var j = 0; j < columns; j++){
+      nestedArr.push(0)
+    }
+    arr.push(nestedArr);
+    // // or instead of the 5 lines above....
+    // arr.push(new Array(rows).fill(0));
+  }
+  return arr;
+}
+
 //29.
 
 
