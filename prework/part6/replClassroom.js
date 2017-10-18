@@ -593,7 +593,7 @@ function fill(arr, val){
   return arr;
 }
 
-//their solution
+//their solution..interesting, REDUCE used on arr...the acc is actually the arr itself!!
 function fill(arr,val){
   return arr.reduce(function(acc,next,idx){
     acc[idx] = val
@@ -601,8 +601,14 @@ function fill(arr,val){
   },arr)
 }
 
-//30.
+//30.Write a function called isPrime which returns true if a number is a prime number. 
 
+function isPrime(num){
+  for(let i=2; i<num/2; i++){
+    if (num % i === 0) return false;
+  }
+  return true;
+}
 
 
 
