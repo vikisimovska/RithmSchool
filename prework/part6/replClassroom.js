@@ -593,6 +593,38 @@ function fill(arr, val){
   return arr;
 }
 
+//their solution
+function fill(arr,val){
+  return arr.reduce(function(acc,next,idx){
+    acc[idx] = val
+    return acc
+  },arr)
+}
+
+//30.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
