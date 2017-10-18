@@ -557,7 +557,18 @@ function omit(obj, keysToOmit){
 //28.Writ a function called createMatrix which takes in two whole numbers, n and m, and creates a
 //two-dimensional array with n columns and m rows. All of the values inside of your array should be 0.
 
+function createMatrix(n, m){
+  let arr = [];
+  for (let i=0; i<m ;i++) {
+    arr[i]=[];
+  for (let j=0; j<n; j++) {
+    arr[i][j]=0;
+    }
+  }
+  return arr;
+}
 
+//29.
 
 
 
