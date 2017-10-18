@@ -583,7 +583,15 @@ function createMatrix(columns, rows){
   return arr;
 }
 
-//29.
+//29. Write a function called fill that accepts an array and a value and returns the same array with e
+//ach slot in the array filled with the value passed to fill.
+
+function fill(arr, val){
+  for(let i=0; i<arr.length; i++){
+    arr[i]=val;
+  }
+  return arr;
+}
 
 
 
