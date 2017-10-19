@@ -689,6 +689,41 @@ function aperture(num, arr){
   return result;
 }
 
+//their solution????
+
+function aperture(n, list) {
+  var idx = 0;
+  var limit = n > 0 ? list.length - (n - 1) : 0;
+  var acc = new Array(limit >= 0 ? limit : 0);
+  while (idx < limit) {
+    acc[idx] = list.slice(idx, idx + n);
+    idx += 1;
+  }
+  return acc;
+}
+
+//35.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
