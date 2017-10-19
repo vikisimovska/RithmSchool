@@ -712,7 +712,44 @@ function findFactors(num){
   }
   return result;
 }
- //36.
+ //36. Write a function called greatestCommonDivisor which accepts two whole numbers and returns the greatest common 
+ //divisor between both numbers. The greatest common divisor of two whole numbers is the largest whole number that 
+ //divides both numbers evenly.
+
+function greatestCommonDivisor(num1, num2){
+  let max = 1;
+  for(let i=2; i <= Math.min(num1, num2); i++){
+    if (num1 % i === 0  && num2 % i === 0) max=i;
+  }
+  return max;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
