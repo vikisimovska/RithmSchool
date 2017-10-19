@@ -661,7 +661,12 @@ function takeRight(arr, n){
     return arr.slice(-1)
 }
 
-//33.
+//33. Write a function called upperFirst, which converts the first character of string to upper case.
+
+function upperFirst(str){
+  return str[0].toUpperCase() + str.slice(-(str.length-1));
+}
+
 
 
 
