@@ -667,6 +667,36 @@ function upperFirst(str){
   return str[0].toUpperCase() + str.slice(-(str.length-1));
 }
 
+//their solution
+function upperFirst(str){
+    return str[0].toUpperCase().concat(str.slice(1));
+}
+
+//34.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
