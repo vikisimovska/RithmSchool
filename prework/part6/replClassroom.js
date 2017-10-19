@@ -633,9 +633,20 @@ function nth(arr, num){
   }
 }
 
-//32.
+//32.Write a function called takeRight which accepts an array and an optional value and
+// creates a copy of the array starting from the end for the value number of elements. 
+//If a value is not passed the function should return an array with the last element. If 
+//the second parameter is greater than the length of the array, return a copy of the entire array. 
 
+function takeRight(arr, val=1){
+  let start = arr.length-val;
+  let end = arr.length;
+  if (val>arr.length-1) return arr;
+  let result = arr.slice(start, start+val) 
+  return result;
+}
 
+//33.
 
 
 
