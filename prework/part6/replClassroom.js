@@ -646,6 +646,21 @@ function takeRight(arr, val=1){
   return result;
 }
 
+//their solution
+
+function takeRight(arr, n){
+    if(n === 0){
+        return [];
+    }
+    if(n >= arr.length){
+        return arr.slice()
+    }
+    if(n < arr.length){
+        return arr.slice(-n)
+    }
+    return arr.slice(-1)
+}
+
 //33.
 
 
