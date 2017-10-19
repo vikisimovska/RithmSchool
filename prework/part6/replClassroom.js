@@ -702,8 +702,17 @@ function aperture(n, list) {
   return acc;
 }
 
-//35.
+//35.Write a function called findFactors which accepts a number and returns an array of all of the numbers which it is 
+//divisible by starting from 1 and going up to the number.
 
+function findFactors(num){
+  let result=[];
+  for(let i=1; i<=num; i++){
+    if (num%i === 0) result.push(i);
+  }
+  return result;
+}
+ //36.
 
 
 
