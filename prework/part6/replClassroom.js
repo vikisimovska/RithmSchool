@@ -672,8 +672,22 @@ function upperFirst(str){
     return str[0].toUpperCase().concat(str.slice(1));
 }
 
-//34.
+//34. Write a function called aperture which accepts a number and an array and returns a new array. 
+//The new array should be composed of subarrays the size of the number with consecutive elements. If 
+//the number passed to this function is greater than the length of the array or less than 1, an empty array is returned.
 
+function aperture(num, arr){
+  let result = [];
+  if (num > arr.length || num < 1) return result;
+  for(let i=0; i < arr.length; i++){
+    let subArr = [];
+    for(let j=i; j < i+num; j++){
+      if (i+num <= arr.length) subArr.push(arr[j]);
+    }
+    if (subArr.length > 0) result.push(subArr);
+  }
+  return result;
+}
 
 
 
