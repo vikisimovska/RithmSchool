@@ -951,6 +951,17 @@ function sumUpDiagonals(arr){
   return sum;
 }
 
+//their solution LOOK IT UP, so much more simple!!!
+
+function sumUpDiagonals(arr) {
+  var total = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+    total += arr[i][i];
+    total += arr[i][arr.length-i-1];
+  }
+  return total
+}
 
 
 
