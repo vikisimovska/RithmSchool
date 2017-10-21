@@ -920,6 +920,20 @@ function sumBy(arrOfObj, rule){
   return sum;
 }
 
+//their solution
+function sumBy(arr,cbOrKey){
+    var count = 0;
+    for(var i = 0; i < arr.length; i++){
+        if(typeof cbOrKey === 'function'){
+            count+= cbOrKey(arr[i])
+        } else {
+            count+= arr[i][cbOrKey]
+        }
+
+    }
+
+    return count;
+}
 
 
 
