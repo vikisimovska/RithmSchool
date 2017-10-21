@@ -860,6 +860,20 @@ reduce(['Elie', 'Matt', 'Tim', 'Michael'], function(accumulator, nextValue){
    return accumulator += ' ' + nextValue;
 }); // 'Elie Matt Tim Michael'
 
+//their solution..LOOK IT UP, so much better!!
+//If there is no initial value, it assigns the first array val to acc
+//and IT DOESNT CALL THE CB ON IT!!
+function reduce(arr, callback, initialVal) {
+    var accumulator = initialVal;
+    for (var i = 0; i < arr.length; i++) {
+        if (accumulator !== undefined)
+            accumulator = callback(accumulator, arr[i], i, arr);
+        else
+            accumulator = arr[i];
+    }
+    return accumulator;
+}
+
 
 
 
