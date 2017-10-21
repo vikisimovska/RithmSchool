@@ -874,6 +874,19 @@ function reduce(arr, callback, initialVal) {
     return accumulator;
 }
 
+//41. Write a function called remove that accepts an array and a callback. This function should iterate through the array 
+//and remove all elements for which the callback returns a truthy value. Then, the function should return an array of removed elements.
+function remove(arr, cb){
+  let result = [];
+  for(let i=0; i<arr.length; i++){
+    if (cb(arr[i])){
+      result.push(arr[i]);
+      arr.splice(i, 1);
+      i=0;
+    } 
+  }
+  return result;
+}
 
 
 
