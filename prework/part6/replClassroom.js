@@ -712,6 +712,9 @@ function findFactors(num){
   }
   return result;
 }
+
+//NOT PUSHED FROM HERE!!!!
+
  //36. Write a function called greatestCommonDivisor which accepts two whole numbers and returns the greatest common 
  //divisor between both numbers. The greatest common divisor of two whole numbers is the largest whole number that 
  //divides both numbers evenly.
@@ -723,6 +726,222 @@ function greatestCommonDivisor(num1, num2){
   }
   return max;
 }
+
+//THEIR SOLUTION...NEVER SEEN THIS SOLUTION BEFORE!!
+function greatestCommonDivisor(num1, num2){
+    if (num1 === 0) return num2;
+    while (num2 !== 0) {
+        if (num1 > num2) num1 = num1 - num2;
+        else num2 = num2 - num1;
+    }
+    return num1;
+}
+
+
+//37.Write a function called letterCounter which accepts a string and returns a function. When the inner function 
+//is invoked it should accept a parameter which is a letter, and the inner function should return the number of times 
+//that letter appears. This inner function should be case insensitive.
+
+function letterCounter(str){
+  strArr = str.split("");
+    return function (letter){
+      let count = 0;
+      for(let i=0; i<strArr.length; i++){
+        if (strArr[i].toLowerCase() === letter.toLowerCase()) count++;
+      }
+      return count;
+  }
+}
+
+var counter = letterCounter('Amazing')
+counter('a') // 2
+counter('m') // 1
+
+var counter2 = letterCounter('This Is Really Fun!')
+counter2('i') // 2
+counter2('t') // 1 
+
+//their solution
+
+function letterCounter(str){
+  return function counter(char){
+    var count = 0;
+    var lowerStr = str.toLowerCase()
+    var lowerChar = char.toLowerCase()
+    for(var i = 0; i < lowerStr.length; i++){
+      if(lowerStr[i] === char) count++
+    }
+    return count;
+  }
+}
+
+//38.Write a function called omitBy which accepts an object and a callback function. This function should return an
+// object with all the keys and values for which the values return falsey values when passed into the callback function.
+
+function omitBy(obj, cb){
+  let result = {};
+  for (let key in obj){
+    if (!cb(obj[key])) result[key] = obj[key];
+  }
+  return result;
+}
+
+//calling the function
+
+function isNumber(val) {
+  return Number.isFinite(val);
+}
+var isString(val) {
+  return typeof val === "string";
+}
+
+var object = { 'a': 1, 'b': '2', 'c': 3 };
+omitBy(object, isNumber) // { 'b': '2' }
+omitBy(object, isString) // { 'a': 1, 'c': 3 }
+
+//39.Write a function called pickBy which accepts an object and a callback function. The function should return a new 
+//object consisting of keys and values where the value returns something truthy when passed into the callback.
+
+function pickBy(obj, cb){
+  let result = {};
+  for (let key in obj){
+    if(cb(obj[key])) result[key]=obj[key];
+  }
+  return result;
+}
+
+//40.Write a function called reduce which accepts an array, a callback function, and an initial value. Reduce should
+// iterate over the input array and accumulate a value based on the return value of the callback.
+
+//The callback should accept as arguments the current accumulated value, the current array value, and the current 
+//array index. After each iteration, the return value from the callback becomes the new accumulator value. When the 
+//iteration is finished, reduce should return the final accumulated value.
+
+//If value is provided, it is the first value in the accumulator. If no value is provided, the first element in the
+// array should be the initial value, and process of accumulation using the callback should start from the second element in the array.
+
+function reduce(arr, cb, initialVal){
+  let acc = initialVal;
+   if (acc === undefined){
+      acc=arr[0];
+      for (let i=1; i<arr.length; i++){
+        acc = cb(acc, arr[i], i);
+      }
+    }else{
+      for (let i=0; i<arr.length; i++){
+        acc = cb(acc, arr[i], i);
+      }
+    }
+  return acc;
+}
+
+//..calling it
+reduce([1,2,3,4,5], function(accumulator, nextValue){
+   return accumulator + nextValue;
+}, 0); // 15
+
+reduce([1,2,3,4,5], function(accumulator, nextValue){
+   return accumulator + nextValue;
+},10); // 25
+
+reduce([2, 4, 1, 5, 3], function(accumulator, nextValue, idx){
+   return accumulator + (nextValue < idx ? nextValue : 0);
+}, 0); // 4
+
+reduce(['Elie', 'Matt', 'Tim', 'Michael'], function(accumulator, nextValue){
+   return accumulator += ' ' + nextValue;
+},'The instructors are');
+// 'The instructors are Elie Matt Tim Michael'
+
+reduce([1,2,3,4,5], function(accumulator, nextValue){
+   return accumulator + nextValue;
+}); // 15
+
+reduce(['Elie', 'Matt', 'Tim', 'Michael'], function(accumulator, nextValue){
+   return accumulator += ' ' + nextValue;
+}); // 'Elie Matt Tim Michael'
+
+//their solution..LOOK IT UP, so much better!!
+//If there is no initial value, it assigns the first array val to acc
+//and IT DOESNT CALL THE CB ON IT!!
+function reduce(arr, callback, initialVal) {
+    var accumulator = initialVal;
+    for (var i = 0; i < arr.length; i++) {
+        if (accumulator !== undefined)
+            accumulator = callback(accumulator, arr[i], i, arr);
+        else
+            accumulator = arr[i];
+    }
+    return accumulator;
+}
+
+
+//41. Write a function called remove that accepts an array and a callback. This function should iterate through the array 
+//and remove all elements for which the callback returns a truthy value. Then, the function should return an array of removed elements.
+function remove(arr, cb){
+  let result = [];
+  for(let i=0; i<arr.length; i++){
+    if (cb(arr[i])){
+      result.push(arr[i]);
+      arr.splice(i, 1);
+      i=0;
+    } 
+  }
+  return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
