@@ -798,6 +798,16 @@ var object = { 'a': 1, 'b': '2', 'c': 3 };
 omitBy(object, isNumber) // { 'b': '2' }
 omitBy(object, isString) // { 'a': 1, 'c': 3 }
 
+//39.Write a function called pickBy which accepts an object and a callback function. The function should return a new 
+//object consisting of keys and values where the value returns something truthy when passed into the callback.
+
+function pickBy(obj, cb){
+  let result = {};
+  for (let key in obj){
+    if(cb(obj[key])) result[key]=obj[key];
+  }
+  return result;
+}
 
 
 
