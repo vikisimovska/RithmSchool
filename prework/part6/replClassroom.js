@@ -888,6 +888,18 @@ function remove(arr, cb){
   return result;
 }
 
+//their solution
+function remove(arr,cb){
+  var newArr = [];
+  for(var i = 0; i < arr.length; i++){
+    while(cb(arr[i])){
+      newArr = newArr.concat(arr.splice(i,1))  
+    }
+  } 
+  return newArr;
+}
+
+//42.
 
 
 
