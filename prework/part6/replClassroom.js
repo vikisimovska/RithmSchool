@@ -963,6 +963,24 @@ function sumUpDiagonals(arr) {
   return total
 }
 
+//44.Write a function called twoArrayDifference which accepts two arrays and returns an array of all of the values 
+//n the first that are not the second array. The returned array should preserve the order of elements from the first array. 
+
+function twoArrayDifference(arr1, arr2){
+  let result = [];
+  let seen = false;
+  for (let i=0; i<arr1.length; i++){
+    for (let j=0; j<arr2.length; j++){
+      if (arr1[i]=== arr2[j]){
+        seen=true;
+        break;
+      } 
+    }
+    if (seen===false) result.push(arr1[i]);
+    seen=false;
+  }
+  return result;
+}
 
 
 
