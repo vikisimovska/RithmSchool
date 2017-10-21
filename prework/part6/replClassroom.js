@@ -935,6 +935,22 @@ function sumBy(arr,cbOrKey){
     return count;
 }
 
+//43.Write a function called sumDiagonals which accepts an NxN array of arrays and sums the two main diagonals in 
+//the array: the one from the upper left to the lower right, and the one from the upper right to the lower left.
+
+function sumUpDiagonals(arr){
+  let sum = 0;
+  for(let i=0; i<arr.length; i++){
+    for(let j=i; j<i+1; j++){
+      sum += arr[i][j];
+    }
+    for(let j=arr.length-1-i; j>arr.length-2-i; j--){
+      sum += arr[i][j];
+    }
+  }
+  return sum;
+}
+
 
 
 
