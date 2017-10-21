@@ -981,6 +981,17 @@ function twoArrayDifference(arr1, arr2){
   }
   return result;
 }
+//their solution ..VERY ELEGANT!!
+
+function twoArrayDifference(arr1, arr2){
+  return arr1.filter(function(val){
+    return arr2.indexOf(val) === -1;
+  })
+}
+
+//45.Write a function called union which accepts a variable number of arguments, which are all arrays. The function
+//returns a new array of unique values from all the parameters.
+
 
 
 
