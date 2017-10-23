@@ -981,6 +981,7 @@ function twoArrayDifference(arr1, arr2){
   }
   return result;
 }
+
 //their solution ..VERY ELEGANT!!
 
 function twoArrayDifference(arr1, arr2){
@@ -991,16 +992,210 @@ function twoArrayDifference(arr1, arr2){
 
 //45.Write a function called union which accepts a variable number of arguments, which are all arrays. The function
 //returns a new array of unique values from all the parameters.
+function union(){
+  //let arg = [].slice.call(arguments);
+  let uniq = [];
+  let arr = [];
+  //solving it with CONCAT!!
+  for(let i=0; i<arguments.length; i++){
+  	//CONACAT RETURNS A NEW ARR, which REFERENCE has to be saved in this case using the same arr var.
+  arr = arr.concat(arguments[i]);
+  }
+  //solving it with PUSH!!
+  // for (let i=0; i<arguments.length; i++){
+  //   for (let j=0; j<arguments[i].length; j++){
+  //     //console.log("arg[i][j] is " + arg[i][j]);
+  //       uniq.push(arguments[i][j]);
+  //   }
+  // }
+  for (let j=0; j<arr.length; j++){
+    if (!uniq.includes(arr[j])) uniq.push(arr[j]);
+  }
+  
+  return uniq;
+}
+union([2],[1, 2]); // [2, 1]
+union([2],[1, 2], [3], [3, 4, 5]); // [2,1,3,4,5]
+union([2],[1, 2], [6,8], [4,5,1,2], [2,7,6,9]); // [2,1,6,8,4,5,7,9]
+
+//46.Write a function called zipObject which accepts two arrays, one of property identifiers and one of corresponding
+// values. It returns an object with the keys from one array and values from another. If the first array is longer than 
+//the second, the value in the object should be undefined. If the second array is longer, ignore the additional values in the second array.
+
+function zipObject(propArr, valArr){
+  let result = {};
+  //filling up the valArr with undefined
+  if (propArr.length > valArr.length){
+    let difference = propArr.length - valArr.length;
+    while(difference > 0){
+      valArr.push(undefined);
+      difference --;
+    }
+  }
+  for(let j=0; j<propArr.length; j++){
+    result[propArr[j]]=valArr[j];
+  }
+  return result;
+}
+
+//their solution...A VAR GETS VALUE OF UNDEFINED BY DEFAULT, DOESNT NEED TO BE EXPLICITLY SET AS IN MY SOLUTION!!
+function zipObject(){
+    var obj = {};
+    for(var i = 0; i < arguments[0].length; i++){
+        obj[arguments[0][i]] = arguments[1][i]
+    }
+    return obj;
+}
+
+//47. Write a function called binarySearch which accepts a sorted array and a value 
+//and returns the index at which the value exists. Otherwise, return -1. 
 
 
 
 
 
 
+//48.Write a function called binaryToDecimal which accepts a string of zeros and ones and returns the decimal value.
+// Do not use parseInt!
 
+//sample : 0101= (1*2^4) + (0*2^3) + (1*2^2) + (0*2^1) + (1*2^0)=16+0+4+0+1=21
+function binaryToDecimal(str){
+  let result = 0;
+  for (let i=0; i<str.length; i++){
+    result += str[i]*(2**(str.length-1-i));
+  }
+  return result;
+}
 
+//their solution
+function binaryToDecimal(num){
+  var reversed = num.split('').reverse();
+  var total = 0
+  for(var i = 0; i < reversed.length; i++){
+    if(reversed[i] === '1'){
+      total += Math.pow(2, i)
+    } 
+  }
+  return total
+}
 
+//49.Write a function called reverseVowels which accepts a string and reverses the vowels in the string. 
+//first attempt
+// function reverseVowels(str){
+//   let arr = str.split("");
+//   let vowels = ["a","e","i","o","u"];
+//   let result = [];
+//   let i=0;
+//   let j=arr.length-1;
+//   while(i <= Math.floor(parseInt(arr.length/2))){
+//     if (vowels.includes(arr[i])){
+//       if (vowels.includes(arr[j]) && j >Math.floor(parseInt(arr.length/2)) ){
+//         let temp = arr[i];
+//         arr[i]=arr[j];
+//         arr[j]=temp;
+//         i++;
+//         j--;
+//       }else{
+//         j--;
+//       }
+//     }else{
+//       i++;
+//     }
+//   }
+//     return arr.join("");
+// }
 
+function reverseVowels(str) {
+    var vowels = "aeiouAEIOU";
+    var i = 0;
+    var j = str.length - 1;
+    
+    while(i < j){
+        if(vowels.indexOf(str[i]) < 0){
+            i++;
+            continue;
+        }
+        
+        if(vowels.indexOf(str[j]) < 0){
+            j--;
+            continue;
+        }
+        
+        var temp = "";
+        str = str.split("");
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        str = str.join("");
+        
+        i++;
+        j--;
+    }
+    
+    return str;
+}
+  
+//their solution
+function reverseVowels(s) {
+    if(s.length === 0) return s;
+    
+    var chars = s.split('');
+    var low = 0;
+    var high = s.length - 1;
+    var vowels = "aeiouAEIOU";
+    var temp;
+    while(low < high) {
+    	//used inner loop instead of using continue and restarting the BIG loop!!!
+        while(low < high && !vowels.includes(chars[low])) low++;
+        while(low < high && !vowels.includes(chars[high])) high--;
+        temp = chars[high];
+        chars[high] = chars[low];
+        chars[low] = temp;
+        low++;
+        high--;
+    }
+    
+    return chars.join('');
+}
+//50.Write a function called rotateClockWise that rotates an NxN array of arrays clockwise, instead of counterclockwise.
+// This problem is challenging so it will greatly help if you write/draw what the array looks like before and after it is rotated.
+
+function rotateClockwise(){
+  let result = [];
+  let obj={};
+  for (let i=arguments[0].length-1; i>=0; i--){
+    for(let j=0; j<arguments[0][i].length; j++){
+      let arr = [arguments[0][i][j]];
+      if (Array.isArray(obj[j])){
+      	//result[val.toLowerCase()] = (result[val.toLowerCase()] || 0) + 1;
+        obj[j].push(arguments[0][i][j]);
+      }else{
+         obj[j] = arr;
+      }
+    }
+  }
+  for(var key in obj){
+    result.push(obj[key]);
+  }
+  return result;
+}
+
+//their solution
+function rotateClockwise(a) {
+  var n=a.length;
+  for (var i=0; i<n/2; i++) {
+    for (var j=i; j<n-i-1; j++) {
+      var tmp=a[i][j];
+      a[i][j]=a[n-j-1][i];
+      a[n-j-1][i]=a[n-i-1][n-j-1];
+      a[n-i-1][n-j-1]=a[j][n-i-1];
+      a[j][n-i-1]=tmp;
+    }
+  }
+  return a;
+}
+
+//.51
 
 
 
