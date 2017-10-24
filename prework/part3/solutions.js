@@ -185,7 +185,14 @@ function numberCompare(num1, num2){
 	  }
 	  return obj;
 	}
-
+    
+    function multipleLetterCount(str){
+        let result = {};
+        for (let i=0; i<str.length; i++){
+            result[str[i]] = (result[str[i]] || 0) + 1;
+        }
+         return result;
+     }
 
 	function arrayManipulation(arr, command, location, value){
 	  if(command === 'remove' && location === 'end'){
