@@ -195,20 +195,20 @@ function numberCompare(num1, num2){
      }
 
 	function arrayManipulation(arr, command, location, value){
-	  if(command === 'remove' && location === 'end'){
+	if  (command === 'remove' && location === 'end'){
 	         return arr.pop();
 	    } 
-            if (command === 'remove' && location === ‘beginning’){
-	         return arr.shift();
-             }
-	     if(command === 'add' && location === ‘beginning’){
-	         arr.unshift(value);
-	          return arr;
+         if (command === 'remove' && location === ‘beginning’){
+	        return arr.shift();
+        }
+	     if  (command === 'add' && location === ‘beginning’){
+	        arr.unshift(value);
+	        return arr;
 	    }
 	    if (command === 'add' && location === ‘end’){
                  arr.push(value);
 	         return arr;
-	  }
+	    }
 	}
 
 
