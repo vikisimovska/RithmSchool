@@ -1,4 +1,4 @@
-**** Debugging Exercises ****
+************************************* Debugging Exercises *****************************************
 
 1.What does the throw keyword do?
 The throw keyword stops the execution of the code by throwing an error.
@@ -64,7 +64,8 @@ thing;
 
 Reference error - think variable doesnt exist in the outer(global) scope.
 
-**PART II**
+***************************************** PART II *************************************************
+
 Fix the broken code and explain what was wrong:
 
 1.for(var i=0; i > 5; i++){
@@ -137,7 +138,7 @@ function displayEvenNumbers(){
 displayEvenNumbers(); // should return [2,4,6,8] 
 
 
-***NESTED OBJECTS EXCERCISES:***
+******************************** NESTED OBJECTS EXCERCISES:**********************************
 
 **EXCERCISES**
 
@@ -189,7 +190,7 @@ function removeDetail(key){
 removeDetail('citiesLivedIn');
 
 
-** NESTED OBJECT EXCERCISES **
+******************************** NESTED OBJECT EXCERCISES ************************************
 
 var nestedData = {
   innerData: {
@@ -270,8 +271,114 @@ function addCountry(country, capital, population){
 	}
 }
 
+********************************* NESTED ARRAY ***************************************
 
-***NESTED ARRAY EXCERCISES:***
+1.Given the following array, write a function called printEvens that console.logs all of the even numbers.
+var nestedArr = [[1,2,3],[4,5,6],[7,8],[9,10,11,12]];
+
+function printEvens(arr){
+	for (let i=0; i<arr.length; i++){
+	   for (let j=0; j<arr[i].length; j++){
+           if (arr[i][j] % 2 === 0) console.log(arr[i][j]);
+	   }
+	}
+}
+printEvens(); 
+
+2.Given the following array, write a function called sumTotal returns the sum of all numbers in the array
+var nestedArr = [[[1,2],[3,4]],[[5,6]]];
+
+function sumTotal(arr){
+	let sum=0;
+	for (let i=0; i<arr.length; i++){
+	   for (let j=0; j<arr[i].length; j++){
+	     for (let k=0; k<arr[i][j].length; k++){
+           sum += arr[i][j][k];
+	     }
+	   }
+	 }
+	return sum;
+}
+sumTotal(arr); // 21
+
+************** LOOK IT UP ! ! ! ****************
+
+~ toString() .. goes all the way inside the arr recursevly, until it finds a string, no matter how many levals deep the arr is and it returns ONLY one LONG string!!!
+
+ex. var nestedArr = ['Elie', ['Matt', ['Tim']],['Colt',['Whisky',['Janey'], 'Tom']], 'Lorien'];
+'Elie, Matt, Tim, Colt, Whisky, Janey, Tom, Lorien'
+
+
+**OPTIONAL BONUS**
+Given the following array, write a function called countVowels, which returns the count of all of the vowels in each string regardless of case. To see if a value is an array, you can not use typeof since that will return 'object', so one way to do this is by using the Array.isArray function.
+
+var nestedArr = ['Elie', ['Matt', ['Tim']],['Colt',['Whisky',['Janey'], 'Tom']], 'Lorien'];
+
+//their solution (ITERATIVE METHOD)
+
+function seeIfVowel(char, count){
+    var vowels = "aeiou"
+    if(vowels.includes(char.toLowerCase())){
+        return ++count; // add 1 to count then return the value (this is called a prefix operator)
+    }
+    return count;
+}
+
+function countCharacters(str,count){
+    for(var i = 0; i < str.length; i++){
+        count = seeIfVowel(str[i], count)
+    }
+    return count
+}
+
+function countVowels(arr){
+    var count = 0;
+    for(var i = 0; i < arr.length; i++){
+        if(Array.isArray(arr[i])){
+            for(var j = 0; j < arr[i].length; j++){
+                if(Array.isArray(arr[i][j])){
+                    for(var k = 0; k < arr[i][j].length; k++){
+                        if(Array.isArray(arr[i][j][k])){
+                            for(var l = 0; l < arr[i][j][k].length; l++){
+                                count = countCharacters(arr[i][j][k][l], count)    
+                            }
+                        } else {
+                            count = countCharacters(arr[i][j][k], count)    
+                        }
+                    }
+                } else {
+                    count = countCharacters(arr[i][j], count)
+                }
+            }
+        } else {
+            count = countCharacters(arr[i], count)   
+        }
+    }
+    return count;
+}
+
+//RECURSIVE METHOD
+function countVowels(arr){
+  let count = 0;
+  for(var i = 0; i < arr.length; i++){
+     if (Array.isArray(arr[i])) 
+        count += countVowels(arr[i]);
+     else
+        count = countCharacters(arr[i], count); 
+  }
+  return count;
+}
+
+//SHORTEST WAY WITH toString() METHOD
+function countVowelsEasier(arr){
+    var str = arr.toString();
+    var count = 0
+    count = countCharacters(str, count)
+    return count;
+}
+
+
+*********************************** NESTED ARRAY EXCERCISES:************************************
 1.
 function rotate(arr, num){
   for (var i=0; i<num; i++){
