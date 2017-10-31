@@ -382,8 +382,8 @@ function countVowelsEasier(arr){
 1.
 function rotate(arr, num){
   for (var i=0; i<num; i++){
-  var lastNum = arr.pop();
-  arr.unshift(lastNum);
+	  var lastNum = arr.pop();
+	  arr.unshift(lastNum);
   }
   console.log(arr);
 }
@@ -408,86 +408,222 @@ function makeXOGrid(col, rows){
   console.log(arrMain);
 }	
 
+*************************** HIGHER ORDER FUNCTIONS, TIMERS AND CLOSURES EXCERCISES: ************************
 
-
-
-
-Higher Order Functions, Timers, and Closures Exercises:
-   function countDown(time){
-	  var timer = setInterval(function(){
-	    time--;
-	    if(time <= 0){
-	      clearInterval(timer);
-	      console.log('DONE!');
-	    }
-	    else {
-	      console.log(time);
-	    }
-	 },1000)
-	}
+function countDown(time){
+  var timer = setInterval(function(){
+    time--;
+    if(time <= 0){
+      clearInterval(timer);
+      console.log('DONE!');
+    }
+    else {
+      console.log(time);
+    }
+ },1000)
+}
 	
 
-	function randomGame(){
-	  var num;
-	  var times = 0;
-	  var timer = setInterval(function(){
-	    num = Math.random();
-	    times++
-	    if(num > .75) {
-	      clearInterval(timer);
-	      console.log("It took " + times + " try/tries.");
-	    }
-	  },1000)
-	}
+function randomGame(){
+  var num;
+  var times = 0;
+  var timer = setInterval(function(){
+    num = Math.random();
+    times++
+    if(num > .75) {
+      clearInterval(timer);
+      console.log("It took " + times + " try/tries.");
+    }
+  },1000)
+}
 	
 
-	function isEven(num){
-	  return num % 2 === 0;
-	}
-	
+function isEven(num){
+  return num % 2 === 0;
+}
 
-	function isOdd(num){
-	  return num % 2 !== 0;
-	}
-	
 
-	function isPrime(value) {
-	    for(var i = 2; i <= Math.sqrt(value); i++) {
-	        if(value % i === 0) {
-	            return false;
-	        }
-	    }
-	    return value > 1;
-	}
-	
+function isOdd(num){
+  return num % 2 !== 0;
+}
 
-	function numberFact(num, fn){
-	  return fn(num);
-	}
-	
 
-	function find(arr, fn){
-	  for(var i=0; i<arr.length; i++){
-	    if(fn(arr[i])) return arr[i];
-	  }
-	}
-	
+function isPrime(value) {
+    for(var i = 2; i <= Math.sqrt(value); i++) {
+        if(value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+}
 
-	function findIndex(arr, fn){
-	  for(var i=0; i<arr.length; i++){
-	    if(fn(arr[i])) return i;
-	  }
-	}
-	
 
-	function specialMultiply(a,b){
-	  if(arguments.length === 1){
-	    return function(b){
-	      return a*b;
-	    }
-	  }
-	  return a*b;
-	}
+function numberFact(num, fn){
+  return fn(num);
+}
+
+
+function find(arr, fn){
+  for(var i=0; i<arr.length; i++){
+    if(fn(arr[i])) return arr[i];
+  }
+}
+
+
+function findIndex(arr, fn){
+  for(var i=0; i<arr.length; i++){
+    if(fn(arr[i])) return i;
+  }
+}
+
+
+function specialMultiply(a,b){
+  if(arguments.length === 1){
+    return function(b){
+      return a*b;
+    }
+  }
+  return a*b;
+}
+
+
+******************************* DOM EXERCISES ***********************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+</body>
+</html>
+
+Write the code necessary to do the following:
+
+1. Select the section with an id of container without using querySelector.
+let section = document.getElementById("container");
+
+
+2.Select the section with an id of container using querySelector.
+let section = document.querySelector("#container");
+
+3.Select all of the list items with a class of "second".
+document.getElementsByClassName("second");
+document.querySelectorAll(".second");
+
+4.Select a list item with a class of third, but only the list item inside of the ol tag.
+document.querySelector("ol.third");
+
+??????????????????????????????????????????????????????????????????????????????????????
+let ol = document.getElementsByTagName("ol");
+ol.getElementsByClassName("third");
+
+5.Give the section with an id of container the text "Hello!".
+document.getElementById("container").innerText = "Hello";
+
+6.Add the class main to the div with a class of footer.
+let footer = document.querySelector(".footer");
+footer.classList.add("main");
+or
+footer.className += "main";
+
+7.Remove the class main on the div with a class of footer.
+let footer = document.querySelector(".footer");
+footer.classList.remove("main");
+
+8.Create a new li element.
+let newLi = document.createElement("li");
+
+9.Give the li the text "four".
+newLi.innerText = "four";
+
+10.Append the li to the ul element.
+let list = document.querySelector("ul");
+list.appendChild("newLi");
+
+11.Loop over all of the lis inside the ol tag and give them a background color of "green".
+let lis = document.querySelectorAll("ol li");
+for (let i=0; i < lis.length; i++ ){
+	lis[i].style.backgroundColor = "green";
+}
+
+12.Remove the div with a class of footer.
+var footer = document.querySelector(".footer");
+footer.remove;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
