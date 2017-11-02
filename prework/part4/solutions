@@ -693,6 +693,65 @@ Add a new todo (by submitting a form)
 Mark a todo as completed (cross out the text of the todo)
 Remove a todo
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TO DO APP</title>
+</head>
+<body>
+  <h2>THIS ARE YOUR ERRANDS:</h2>
+  
+  <br><br>
+  
+  <ol id="list">
+  </ol>
+
+  <br><br>
+
+  <form action="#" id="form">
+    <label for="errand">Please enter a new errand:</label> 
+    <input type="text" name="errand" id="errand" >
+    <input type="submit" value="Submit">
+  </form>
+
+  <script type="text/javascript">
+    window.onload = function(){
+      let form = document.getElementById("form");
+      let list = document.getElementById("list");
+      
+      form.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        let newErrand = document.createElement("li");
+        newErrand.innerText = document.getElementById("errand").value;
+
+        let removeButton = document.createElement("button");
+        removeButton.innerText = "X";
+
+        list.appendChild(newErrand);
+        newErrand.appendChild(removeButton);
+
+        form.reset();
+
+      })
+
+      list.addEventListener("click", function(event){
+        if (event.target.tagName.toLowerCase() === 'li'){
+          event.target.style.textDecoration = "line-through";
+        }
+        else if (event.target.tagName.toLowerCase() === "button"){
+          event.target.parentNode.remove();
+        }
+      })
+
+    }
+
+  </script>
+</body>
+</html>
+
+
 
 
 
