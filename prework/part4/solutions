@@ -744,17 +744,70 @@ Remove a todo
           event.target.parentNode.remove();
         }
       })
-
     }
-
   </script>
 </body>
 </html>
 
 
+**PART4 SOLUTIONS**
+Using localStorage, try to store your todos so that if you refresh the page you do not lose what you have added to the list! As a super bonus, try to also save todos that you have marked as complete!
 
+window.onload = function(){
+  
+  let list = document.getElementById("list");
+  let form = document.getElementById("form");
+  
+  let savedErrands = JSON.parse(localStorage.getItem("errand")) || [];
+  
+  for (let i=0; i < savedErrands.length; i++){
+    console.log("Saved errand is " + savedErrands[i]);
+    let newErrand = document.createElement("li");
+    newErrand.innerText = document.getElementById("errand").value;
+    newErrand.isComplited = savedErrands[i].errand ? true : false;
+    if (newErrand.isComplited){
+      newErrand.style.textDecoration = "line-through";
+    }
+    list.appendChild(newErrand);
+  }
 
+  form.addEventListener("submit", function(){
+    event.preventDefault();
+    let newErrand = document.create("li");
+    let errandValue = document.getElementById("errand").value;
+    newErrand.innerText = errandValue;
+    newErrand.isComplited = false;
+    form.reset();
+    list.appendChild(newErrand);
 
+    //save to local storage
+
+    savedErrands.push({errand:newErrand.innerText, isComplited:false});
+    localStorage.setItem("todos", JSON.stringify(savedErrands));
+  })
+ 
+  list.addEventListener("click", function(event){
+    let clickedListItem = event.target;
+
+    if (!clickedListItem.isComplited){
+      clickedListItem.style.textDecoration = "line-through";
+      clickedListItem.isComplited = true;
+    } else {
+      clickedListItem.style.textDecoration = "none";
+      clickedListItem.isComplited = false;
+    }
+
+    //breaks for duplicates or dynamic IDs
+
+    for (let i=0; i < savedErrands; i++){
+      if (savedErrands[i].errand === clickedListItem.innerText){
+        savedErrands[i].isComplited = clickedListItem.isComplited;
+        localStorage.setItem("errand", JSON.stringify(savedErrands));
+      }
+    }
+  }); 
+
+}
 
 
 
