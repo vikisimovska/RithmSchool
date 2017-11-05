@@ -1,6 +1,3 @@
-What is the difference between / and ~? What do we call each of these directories?
-What command do we use to change directories?
-What is the difference between an absolute and relative path?
 
 **Permissions, Redirection, and Piping Exercise**
 
@@ -27,6 +24,30 @@ cat vegetables.txt | sort | uniq > vegetables_sorted (their solution)
 cat vegetables.txt | tail -n 3 > last_three.txt
 grep "Broccoli" vegetables.txt | wc -l
 cat vegetables.txt | grep "Broccoli" | wc -l (their solution)
+
+
+**Intermediate Terminal Exercises**
+
+Part I
+
+1.export FIRST_NAME = viki
+2.echo $FIRST_NAME
+3.echo $PATH
+4.Its a set of paths where the system looks in order to executes commands like: ls, man, cat ..ect
+5.To save a path that I access often.
+6.By modifying (exporting the var inside) the shell config file (bash_profile or .zshrc) in home dir.
+export NEWVAR=/Users/$USER/DESKTOP
+7.A process is a prog currently running on the mashine.
+8.ps aux
+9.A uniq identifier that every process has. Its needed to kill a process.
+10.kill PID or kill -9 PID
+11.Some processes if they are frozen or unresponsive cant be killed just with the command kill (signal TERM), so kill -9 (KILL signal) is necessary.This signal cant be caught or ignored.
+12. -i
+13. -B
+14. -C
+15. -A
+16. -w
+17. -n
 
 
 
