@@ -1,0 +1,32 @@
+What is the difference between / and ~? What do we call each of these directories?
+What command do we use to change directories?
+What is the difference between an absolute and relative path?
+
+**Permissions, Redirection, and Piping Exercise**
+
+Part I (Permissions and links)
+
+touch restricted.txt
+chmod 600 restricted.txt
+chmod a=rwx restricted.txt
+mkdir secret_files
+touch secret_files/first_secret.txt
+mkdir secret_files/classified
+touch secret_files/classified/super_secret.txt
+chmod -R 770 secret_files
+ln restricted.txt called hard_link
+ln -s secret_files/classified classified_link
+
+
+Part II (Piping and Redirection)
+
+sort vegetables.txt
+wc -l vegetables.txt
+sort vegetables.txt | uniq > vegetables_sorted.txt
+cat vegetables.txt | sort | uniq > vegetables_sorted (their solution)
+cat vegetables.txt | tail -n 3 > last_three.txt
+grep "Broccoli" vegetables.txt | wc -l
+cat vegetables.txt | grep "Broccoli" | wc -l (their solution)
+
+
+
