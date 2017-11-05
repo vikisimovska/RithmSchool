@@ -50,4 +50,38 @@ export NEWVAR=/Users/$USER/DESKTOP
 17. -n
 
 
+Part II
+
+1.find ~/Desktop -name “learnt”
+2.find ~/Desktop -name “P.*”
+3.find ~/Desktop -name “*.txt”
+4.find ~/Desktop/views “*data*”
+5.grep -c “Elie” instructors.txt
+6.grep -w “P.*” instructors.txt
+7.grep -win “z.*” instructors.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
