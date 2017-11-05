@@ -61,6 +61,30 @@ Part II
 7.grep -win “z.*” instructors.txt
 
 
+**Advanced Terminal Exercises**
+
+Exercise 1
+
+1.sed -ie ’s/-/:/d’ instructors.txt
+2.cut -d—  -f1,2 instructors.txt |  sed `s/-/ /g`
+
+Exercise 2
+
+1.cut -c 6 instructors.txt | xargs
+2.ls ./Desktop | grep Welcome | xargs
+find ~/Desktop -name '*' | xargs grep Welcome (their solution)
+3.touch access_file.sh
+open access_file.sh
+chmod 755 $1
+4.touch unaccessible.sh
+open unaccessible.sh
+chmod 300
+5.sed -ie ’s/foo/bar/g’ baz.txt
+6.ps aux | awk '{print $2}'
+7.df -h | awk 'FNR == 2 {print $5}'
+
+ 
+
 
 
 
