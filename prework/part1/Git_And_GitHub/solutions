@@ -1,0 +1,65 @@
+**GitHub Basics Exercise**
+
+1.Create a local repository and add and commit some files:
+
+mkdir learn_git
+cd learn_git
+touch first.txt
+git init
+git add .
+git commit -m “adding first text”
+git log —oneline
+touch second.txt
+git add second.txt
+git commit -m “"adding second.txt"
+rm first.txt
+git a .
+git commit -m "removing first.txt"
+git log —oneline
+
+2.Create a remote repository and push your code from the local repo to the remote:
+
+Creating a new repository on GitHub  - 'RithmSchool'
+git remote add origin https://github.com/vikisimovska/RithmSchool
+git push -u origin master
+forked it from github
+git clone https://github.com/vikisimovska/git_practice.git
+adding a file
+sending pull request
+
+
+**Git Basics Exercises**
+
+mkdir learn_git_again
+cd learn_git_again
+touch third.txt
+git init
+git add third.txt
+touch fourth.txt
+git add fourth.txt
+git commit -m "adding fourth.txt"
+rm third.txt
+git add .
+git commit -m "removing third.txt"
+git log —oneline
+git config —global core.pager ”cat”
+git config --global --list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
