@@ -94,6 +94,22 @@ git commit -m “conflict fixed”
 git merge new_branch
 
 
+**GitHub Exercises**
+
+1.mkdir new_dir
+git init
+cd new_dir
+echo hi > first.txt
+git add .
+git commit -m “first commit"
+
+
+2.creating repo on GitHub
+git remote add origin new_repo_url
+git push -u origin master
+
+
+
 
 
 
