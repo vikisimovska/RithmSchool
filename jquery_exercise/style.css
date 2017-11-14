@@ -84,11 +84,17 @@ h2 {
 }
 
 .nav {
-  display: inline-flex;
+  display: none;
+  /*display: inline-flex;*/
   padding-left: 25px;
   font-size: 1.2em;
 }
 
+#list{
+  display: none;
+}
+
+}
 .empty-star {
   color: #a6a299;
 }
@@ -102,6 +108,16 @@ h2 {
 }
 
 button {
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 80px;
+  background: #c0bdb5;
+  color: white;
+  border: none;
+  font-size: 0.8em;
+}
+
+#logInSubmitBtn{
   padding: 10px;
   border-radius: 5px;
   margin-left: 80px;
@@ -127,6 +143,12 @@ button {
   font-size: 1.2em;
   font-weight: 600;
 
+}
+
+#logInForm{
+  padding: 12px 0 24px 50px;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 span.url {
@@ -164,4 +186,5 @@ li {
 #favoriteList{
   displey:none;
 }
+
 
