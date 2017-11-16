@@ -72,7 +72,8 @@ li:hover {
   background: #f5f5ee;
 }
 
-header {
+
+#logInHeader {
   background: #ff6338;
   border-radius: 5px;
 }
@@ -81,13 +82,23 @@ h2 {
   display: inline-flex;
   padding-left: 15px;
   margin: 15px;
+  text-align: center;
+
 }
 
 .nav {
   display: none;
-  /*display: inline-flex;*/
   padding-left: 25px;
   font-size: 1.2em;
+  float:right;
+  margin-top: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submitFavorit{
+  float: left;
+  margin-right: 200px;
 }
 
 #list{
@@ -125,6 +136,12 @@ button {
   color: white;
   border: none;
   font-size: 0.8em;
+  cursor: pointer;
+}
+
+#author {
+  width: 300px;
+  height: 35px;
 }
 
 #title {
@@ -136,6 +153,11 @@ button {
   width: 300px;
   height: 35px;
 }
+
+/*#storyName {
+  width: 300px;
+  height: 35px;
+}*/
 
 #form {
   display: none;
@@ -149,6 +171,19 @@ button {
   padding: 12px 0 24px 50px;
   font-size: 1.2em;
   font-weight: 600;
+  /*font-weight: lighter;*/
+  display:none;
+}
+
+form#logInForm p{
+  text-align: center;
+}
+
+#name{
+  margin-left: 80px;
+}
+#userName{
+  margin-left: 40px;
 }
 
 span.url {
@@ -184,7 +219,16 @@ li {
 }
 
 #favoriteList{
-  displey:none;
+  display:none;
 }
 
+#logIn{
+  display: inline-flex;
+  margin-left: 350px;
+  cursor: pointer;
+}
+
+#logOut{
+  padding-right: 50px;
+}
 
