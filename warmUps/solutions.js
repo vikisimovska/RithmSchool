@@ -44,6 +44,7 @@ function twoArrayObject(keyArr, valArr){
   return obj;
 }
 
+<<<<<<< HEAD
 //model solution
 function twoArrayObject(keys, values) {
   var obj = {}
@@ -55,10 +56,13 @@ function twoArrayObject(keys, values) {
   return obj
 }
 
+=======
+>>>>>>> 93256c58ff4b5ef4fd165327daa455a62abafa8b
 twoArrayObject(['a', 'b', 'c', 'd'], [1, 2, 3]) // {'a': 1, 'b': 2, 'c': 3, 'd': null}
 twoArrayObject(['a', 'b', 'c']  , [1, 2, 3, 4]) // {'a': 1, 'b': 2, 'c': 3}
 twoArrayObject(['x', 'y', 'z']  , [1,2]) // {'x': 1, 'y': 2, 'z': null}
 
+<<<<<<< HEAD
 //2.Part II
 
 //Write a function called longestFall, which accepts an array of integers, and returns  
@@ -88,6 +92,14 @@ longestFall([2, 2, 2]) // 1, 2 is the longest consecutive sequence of decreasing
 longestFall([5, 4, 4, 4, 3, 2]) // 3, 4-3-2 is the longest
 longestFall([9, 8, 7, 6, 5, 6, 4, 2, 1]) // 5, 9-8-7-6-5 is the longest
 longestFall([]) // 0
+=======
+
+
+
+
+
+
+>>>>>>> 93256c58ff4b5ef4fd165327daa455a62abafa8b
 
 
 
