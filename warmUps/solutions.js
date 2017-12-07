@@ -190,7 +190,70 @@ separatePositive([5, 10, -15, 20, 25]) // [10, 10, 25, 20, -15]
 separatePositive([-5, 5]) // [5, -5]  
 separatePositive([1, 2, 3]) // [1, 2, 3] 
 
+//5. Hamming Distance (https://en.wikipedia.org/wiki/Hamming_distance).
+//This function takes in two strings of equal length, and calculates the distance between t
+//hem. Here, "distance" is defined as the number of characters that differ at the same position. 
+//The function should ignore case.If the inputs do not have the same length, the function should 
+//return "Input strings must have the same length."
 
+function hammingDistance(str1, str2) {
+  var diff = 0;
+  if (str1.length !== str2.length){
+      return ("Input strings must have the same length.");
+  }
+  for(let i= 0; i < str1.length; i++){
+    if (str1[i].toLowerCase() !== str2[i].toLowerCase()){
+      diff++;
+    }
+  }
+  return diff;
+}
+function hammingDistance(str1, str2) {
+  var diff = 0;
+  if (str1.length !== str2.length){
+      return ("Input strings must have the same length.");
+  }
+  for(let i= 0; i < str1.length; i++){
+    if (str1[i].toLowerCase() !== str2[i].toLowerCase()){
+      diff++;
+    }
+  }
+  return diff;
+}
+//MY SOLUTION
+function oneCharDifference(str1, str2) {
+
+//1st case - if length same -> hamming distance ===1
+  if (str1.length === str2.length){
+    return hammingDistance(str1, str2) === 1;
+  } 
+ 
+//2nd case - if length diff by more then 1 -> return false
+  if (Math.abs(str1.length-str2.length) > 1) return false;
+  
+//3rd case -> check if one of the str is empty str and the other one has only one char in it 
+  if ((str1.length === 0 && str2.length === 1) || (str1.length === 1 && str2.length === 0) ) return true;
+ 
+
+//4th case -> length differs by one
+//return false if the pointer of longer str is more then 1
+  var shorter, longer, diff = 0, shPtr = 0;
+  str1.length > str2.length ? (shorter = str2, longer=str1 ): (shorter = str1, longer=str2); 
+  for (let i=0; i < longer.length; i++){
+    
+    //if both pointers are equal-> move them
+      if (shorter[shPtr].toLowerCase() === longer[i].toLowerCase()){
+        if (shPtr < shorter.length-1) shPtr++;
+       
+      }else {
+         
+      //if they are not the same move the larger, keep counter if it reaches 2 return false;
+        diff++;
+        if (diff >= 2) return false;
+      }
+  }
+  return true;
+}
 
 
 
