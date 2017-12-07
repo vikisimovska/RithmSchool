@@ -164,9 +164,31 @@ snail([[1,2,3],[8,9,4], [7,6,5]]) // [1,2,3,4,5,6,7,8,9]
 snail([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,25]]) 
 // [1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]
 
-
-
-
+//4.Write a function called separatePositive which accepts an array of non-zero integers. 
+//Separate the positive integers to the left and the negative integers to the right. 
+//The positive numbers and negative numbers need not be in sorted order. 
+function separatePositive(arr){
+  var left = 0;
+  var right = arr.length-1;
+  while ( left < right){
+    if (arr[left] > 0){
+          left ++;
+    } 
+    if (arr[right] < 0){
+      right --;  
+    }
+    if (arr[left] < 0 && arr[right] > 0){
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      left ++;
+      right --; 
+    }
+  }
+  return arr;
+}
+separatePositive([2, -1, -3, 6, -8, 10]) // [2, 10, 6, -3, -1, -8]
+separatePositive([5, 10, -15, 20, 25]) // [10, 10, 25, 20, -15]    
+separatePositive([-5, 5]) // [5, -5]  
+separatePositive([1, 2, 3]) // [1, 2, 3] 
 
 
 
