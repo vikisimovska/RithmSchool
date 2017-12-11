@@ -255,7 +255,84 @@ function oneCharDifference(str1, str2) {
   return true;
 }
 
+// Collatz sequence.
+// Given a positive whole number n, this function should produce an array given by the following rules:
+// 1. The first element in the array should be n.
+// 2. After the first element, each subsequent element should be equal to: 
+//   - Half the previous element, if the previous element is even, 
+//   - Three times the previous element plus one, if the previous element is odd. 
+// Note that in either case, the result should be an integer.
+// 3. The last element in the array should be 1. When you encounter your first 1, you should push it to the array and return the array.
 
+function collatzSequenceIterative(n) {
+  var result=[n];
+  var previous = n;
+  
+  if((n === 0) || !Number.isInteger(n) || n < 1) return "Input must be a positive whole number.";
+   //The first element in the array should be n.
+   while(previous !== 1){
+  // if the previous element is even
+    if(previous % 2=== 0 ){
+      previous = previous/2;
+      result.push(previous);
+    }else{
+      //if the previous elem is odd
+      previous = 3*previous + 1;
+      result.push(previous);
+    }
+  }
+  return result;
+}
+//collatzSequenceIterative(4); // [6, 3, 10, 5, 16, 8, 4, 2, 1]
+function collatzSequenceRecursive(n) {
+  if((n === 0) || !Number.isInteger(n) || n < 1) return "Input must be a positive whole number.";
+  var result=[n];
+  
+  if (n===1){
+    return [1];
+  } 
+  
+  if(n % 2=== 0 ){
+    result = result.concat(collatzSequenceRecursive(n/2));
+  }else{
+    result = result.concat(collatzSequenceRecursive(n*3+1));
+    }
+    return result;
+}
+
+//MODEL SOLUTION
+function collatzSequenceIterative(num) {
+  if (!(Number.isInteger(num) && num > 0)) {
+    return "Input must be a positive whole number.";
+  }
+  
+  var arr = [num];
+  var current = num;
+  
+  while (current !== 1) {
+    if (current % 2 === 0) {
+      current = current / 2;
+    } else {
+      current = 3 * current + 1;
+    }
+    arr.push(current);
+  }
+  return arr;
+}
+
+function collatzSequenceRecursive(num) {
+  if (!(Number.isInteger(num) && num > 0)) {
+    return "Input must be a positive whole number.";
+  }
+  if (num === 1) {
+    return [1];
+  }
+  return [num].concat(collatzSequenceRecursive(
+    num % 2 ? 
+    3 * num + 1 : 
+    num / 2
+  ));
+}
 
 
 
