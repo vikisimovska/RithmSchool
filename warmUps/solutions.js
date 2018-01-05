@@ -510,7 +510,26 @@ function addCommas(num) {
   var decimalSplit = strNum.split('.');
   var counter = 0;
   
+  function parseValues(start){
+     for(let i = start.length-1; i >= 0; i--){
+      counter++
+      if(counter % 3 === 0 && i > 0){
+        finalStr = "," + strNum[i] + finalStr
+      } else {
+        finalStr = strNum[i] + finalStr    
+      } 
+    }
+  }
   
+  if(decimalSplit.length === 1){
+    parseValues(strNum)
+    return finalStr;
+  } else {
+    parseValues(decimalSplit[0])
+    return finalStr + "." + decimalSplit[1];
+  }
+}
+
 
 
 
