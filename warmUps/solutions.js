@@ -475,6 +475,45 @@ function areThereDuplicates(...args) {
   return false
 }
 
+//This function takes in a number and formats that number so that it has commas after every
+// third digit to the left of the decimal point. You can assume that all numbers are non-negative.
+
+function addCommas(num) {
+  var result="";
+  
+  var str = num.toString();
+  
+    var splitStr = str.split(".");
+    var charsAfterDot = splitStr[1];
+    var charsBeforeDot = splitStr[0];
+  
+    var counter=1;
+    for (let i=charsBeforeDot.length-1; i>=0; i--){
+      result = charsBeforeDot[i] + result;
+      if (counter === 3 && i!== 0){
+        result = "," + result;
+        counter = 0;
+      }
+      counter++;
+    }
+     if (str.includes(".")) return  result +  "." + charsAfterDot;
+    
+       return result;
+}
+
+//MODEL SOLUTION
+function addCommas(num) {
+  var strNum = num.toString();
+  if(strNum.length < 3) return strNum;
+  
+  var finalStr = '';
+  var decimalSplit = strNum.split('.');
+  var counter = 0;
+  
+  
+
+
+
 
 
 
