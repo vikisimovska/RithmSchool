@@ -465,6 +465,24 @@ areThereDuplicates(1, 2, 3) // false
        return result;
 }
 
+//MODEL SOLUTION
+//MODEL SOLUTION
+
+function areThereDuplicates() {
+  
+  // return new Set(arguments).size !== arguments.length;
+  
+  // ok ok ok....
+  let collection = {}
+  for(let val of arguments){
+    collection[val] = (collection[val] || 0) + 1
+  }
+  for(let key in collection){
+    if(collection[key] > 1) return true
+  }
+  return false;
+}
+
 
 
 
