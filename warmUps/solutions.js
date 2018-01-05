@@ -432,7 +432,38 @@ areThereDuplicates(1, 2, 3) // false
 // areThereDuplicates('a', 'b', 'c', 'a') // true 
 
 
+//O(N) solution with an frequency obj or set 
+//cant look up values in a set
+//only can ask if it has it
 
+// Time - O(n log n)
+// Space - O(1) 
+//..sorted  and then 2 pointers starting from begining
+//and both incrementing +1
+
+//areThereDuplicates(1, 2, 3)
+ function addCommas(num) {
+  var result="";
+  
+  var str = num.toString();
+  
+    var splitStr = str.split(".");
+    var charsAfterDot = splitStr[1];
+    var charsBeforeDot = splitStr[0];
+  
+    var counter=1;
+    for (let i=charsBeforeDot.length-1; i>=0; i--){
+      result = charsBeforeDot[i] + result;
+      if (counter === 3 && i!== 0){
+        result = "," + result;
+        counter = 0;
+      }
+      counter++;
+    }
+     if (str.includes(".")) return  result +  "." + charsAfterDot;
+    
+       return result;
+}
 
 
 
