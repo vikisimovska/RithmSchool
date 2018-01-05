@@ -384,7 +384,7 @@ countPairs([1,2,3,4,5], 10) // 0
 countPairs([1,2,3,4,5], -3) // 0
 countPairs([0,-4],-4) // 1
 
-//MODEL SOLUTION
+//MODEL SOLUTION 1
 // O(n) / O(n)
 function countPairs(arr, num){
     let s = new Set(arr);
@@ -398,6 +398,28 @@ function countPairs(arr, num){
     return count;
 }
 
+//MODEL SOLUTION 2
+// O(n log n) / O(1)
+
+function countPairs(arr, num){
+  arr.sort((a,b) => a > b);
+  let count = 0;
+  let start = 0;
+  let end = arr.length-1
+  while(start < end){
+    let sum = arr[start] + arr[end]
+    if(sum === num) {
+      count++
+      start++
+      end--
+    } else if(sum < num){
+      start++
+    } else {
+      end--
+    }
+  }
+  return count;
+}
 
 
 
