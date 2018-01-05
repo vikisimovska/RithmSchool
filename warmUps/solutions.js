@@ -442,32 +442,8 @@ areThereDuplicates(1, 2, 3) // false
 //and both incrementing +1
 
 //areThereDuplicates(1, 2, 3)
- function addCommas(num) {
-  var result="";
-  
-  var str = num.toString();
-  
-    var splitStr = str.split(".");
-    var charsAfterDot = splitStr[1];
-    var charsBeforeDot = splitStr[0];
-  
-    var counter=1;
-    for (let i=charsBeforeDot.length-1; i>=0; i--){
-      result = charsBeforeDot[i] + result;
-      if (counter === 3 && i!== 0){
-        result = "," + result;
-        counter = 0;
-      }
-      counter++;
-    }
-     if (str.includes(".")) return  result +  "." + charsAfterDot;
-    
-       return result;
-}
 
-//MODEL SOLUTION
-//MODEL SOLUTION
-
+//MODEL SOLUTION 1
 function areThereDuplicates() {
   
   // return new Set(arguments).size !== arguments.length;
@@ -483,12 +459,21 @@ function areThereDuplicates() {
   return false;
 }
 
-
-
-
-
-
-
+//MODEL SOLUTION 2
+function areThereDuplicates(...args) {
+  // Two pointers
+  args.sort((a,b) => a > b);
+  var start = 0;
+  var next = 1;
+  while(next < args.length){
+    if(args[start] === args[next]){
+        return true
+    }
+    start++
+    next++
+  }
+  return false
+}
 
 
 
