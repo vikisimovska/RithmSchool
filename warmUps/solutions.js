@@ -334,7 +334,35 @@ function collatzSequenceRecursive(num) {
   ));
 }
 
+//1. Truncate.
+//Given a string and a number n, truncate the string to a shorter string containing at most n characters. 
+//If the string gets truncated, the truncated return string should have a "..." at the end.  Because of this, 
+//the smallest number passed in as a second argument should be 3.
 
+function truncateIteratively(str, n) {
+    //if n < 3, wont work
+    if (n < 3){
+      return "Truncation must be at least 3 characters."
+    } 
+    //if n is 3 return ...
+    else if (n===3){
+      return "...";
+    } 
+    //if n > str.length
+    else if (n > str.length){
+      return str;
+    } 
+    //if n < str.length
+    else {
+      var result = str.slice(0, n-3) + "...";
+    }
+       return result;
+}
 
+truncate("Hello World", 6) // "Hel..."
+truncate("Problem solving is the best!", 10) // "Problem..."
+truncate("Yo", 100) // "Yo"
+truncate("Super cool", 3) // "..."
+truncate("Super cool", 2) // "Truncation must be at least 3 characters."
 
 
