@@ -384,3 +384,37 @@ countPairs([1,2,3,4,5], 10) // 0
 countPairs([1,2,3,4,5], -3) // 0
 countPairs([0,-4],-4) // 1
 
+//MODEL SOLUTION
+// O(n) / O(n)
+function countPairs(arr, num){
+    let s = new Set(arr);
+    let count = 0;
+    for(let val of arr){
+        s.delete(val)
+        if(s.has(num - val)){
+            count++
+        }
+    }
+    return count;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
