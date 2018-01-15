@@ -530,7 +530,35 @@ function addCommas(num) {
   }
 }
 
+// Write a function called constructNote, which accepts two strings, a message and some letters. The function should 
+//return true if the message can be built with the letters that you are given, or it should return false.
+// Assume that there are only lowercase letters and no space or special characters in both the message and the letters.
+// Constraints: 
+// If M is the length of message and N is the length of letters:
+// Time Complexity: O(M+N) 
+// Space Complexity: O(N) 
 
+function constructNote(message, letters){
+  let messageObj = {}
+  let lettersObj = {}
+  
+  for(let val of letters){
+    lettersObj[val] = ++lettersObj[val] || 1
+  }
+  for(let val of message){
+    messageObj[val] = (messageObj[val] || 0) +1
+  }
+ 
+  for (let key in messageObj){
+    if (lettersObj[key] === undefined) return false;
+    if (lettersObj[key] < messageObj[key] ) return false;
+  }
+    
+  return true;
+}
+
+constructNote('aa', 'abc') // false
+ 
 
 
 
