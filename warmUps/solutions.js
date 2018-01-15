@@ -721,6 +721,32 @@ characterFrequencySort("eeeeffalll") // "eeeelllffa"
 characterFrequencySort("abbcccdddd") // "ddddcccbba"
 characterFrequencySort("xyzxyyzzzxyyyyzzzzz") // "zzzzzzzzzyyyyyyyxxx"
 
+//MODEL SOLUTION
+function characterFrequencySort(s) {
+    
+    let characters = new Set();
+    let freqMap = {};
+    let charStore = {};
+    let letters = [];
+    
+    for (let i = 0; i < s.length; i++) {
+        characters.add(s[i]);
+        freqMap[s[i]] = (freqMap[s[i]] || 0) + 1
+    }
+    
+    for (let char of characters) {
+        if (!charStore[freqMap[char]]) charStore[freqMap[char]] = [];
+        charStore[freqMap[char]].push(new Array(freqMap[char]+1).join(char));
+    }
+    
+    for (let i = s.length; i > 0; i--) {
+        if (charStore[i]) {
+            letters = letters.concat(charStore[i]);
+        }
+    }
+    
+    return letters.join('');
+}
 
 
 
