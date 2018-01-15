@@ -664,4 +664,20 @@ bitArraySort([1, 1, 1, 0, 1]) // [0, 1, 1, 1, 1]
 bitArraySort([1, 0, 0, 0, 0]) // [0, 0, 0, 0, 1]
 bitArraySort([1, 0, 1, 0, 0]) // [0, 0, 0, 1, 1]
 
-
+//MODEL SOLUTION
+function bitArraySort(arr) {
+  let countZeros = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr[i]) { countZeros++;}
+  }
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (countZeros) {
+      arr[i] = 0;
+      countZeros--;
+    } else {
+      arr[i] = 1;
+    }
+  }
+  return arr;
+}
