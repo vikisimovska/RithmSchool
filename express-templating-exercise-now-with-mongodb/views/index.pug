@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+	h2 Shopping List
+	a(href='/items/new') Create New Item
+	ul
+	each item in items
+		li #{item.name} | $ #{item.price} &nbsp;
+			a(href=`/items/${item.id}/edit`) Edit Item
+			form(action=`/items/${item.id}?_method=DELETE` method="POST")
+				input(type="submit" value="X")
